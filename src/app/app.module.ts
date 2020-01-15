@@ -38,7 +38,7 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
     LoginComponent,
     SignUpComponent,
     AddProductComponent,
-    routingComponents,
+    routingComponents,// this variable  will hold all the component in the route.module so you dont need witre it here again
     NavBarComponent,
     OredersComponent,
     SideBarComponent,
