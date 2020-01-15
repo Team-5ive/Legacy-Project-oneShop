@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-// we need to import ReactiveFormsModule and assign it in imports
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from "./dashboard/dashboard.component";
@@ -24,9 +23,6 @@ import { SideBarComponent } from "./dashboard/side-bar/side-bar.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
-
-
-
 
 
 
