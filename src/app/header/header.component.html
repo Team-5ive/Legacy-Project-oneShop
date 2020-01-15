@@ -1,1 +1,32 @@
-<p>header works!</p>
+<!-- <div>
+    <p>Team 5ive</p>
+
+
+
+</div> -->
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<header>
+    <div class="container">
+        <a routerLink="/" class="logo">One Shop <i class="fas fa-home"></i></a> &nbsp;&nbsp;
+        <a routerLink="/women" class="logo"> Women <i class="fas fa-female"></i></a> &nbsp;&nbsp;
+        <a routerLink="/men" class="logo"> Men <i class="fas fa-male"></i></a>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" routerLink="/login">
+                <li class="fas fa-user-alt"></li>
+                </a>
+                </li>
+                <li><a href="#" routerLink="/cart">
+                        <i class="fas fa-cart-arrow-down"></i>
+                    </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
