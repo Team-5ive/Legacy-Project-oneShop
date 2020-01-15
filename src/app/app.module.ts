@@ -31,7 +31,6 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
     AppComponent,
     DashboardComponent,
     FooterComponent,
-    HomeComponent,
     HeaderComponent,
     AccountComponent,
     CartComponent,
