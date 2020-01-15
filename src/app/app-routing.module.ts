@@ -1,9 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { MenComponent } from "./dashboard/men/men.component";
-import { WomenComponent } from "./dashboard/women/women.component";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
+
 /**
  *  import files
  * add them to the routes array in the form of
@@ -11,10 +10,9 @@ import { CategoriesComponent } from "./body-components/categories/categories.com
  * */
 
 const routes: Routes = [
-  { path: '' , component: HomeComponent },
-  { path: 'store/women', component: CategoriesComponent },
-  { path: 'store/men', component: CategoriesComponent },
-  
+  { path: "", component: HomeComponent },
+  { path: "store/men", component: CategoriesComponent },
+  { path: "store/women", component: CategoriesComponent }
 ];
 
 @NgModule({
@@ -23,4 +21,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 // add here your component route  so you can add them in app.moudel (for best practice) 
-export const routingComponents = [MenComponent,WomenComponent,HomeComponent,CategoriesComponent]
+export const routingComponents = [HomeComponent,CategoriesComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 
 
+
 @Component({
   selector: 'app-men',
   templateUrl: './men.component.html',
@@ -8,13 +9,13 @@ import { Component, OnInit ,Input} from '@angular/core';
 })
 export class MenComponent implements OnInit {
 
-  
+ 
 
   constructor() { }
 
   ngOnInit() {
 
-    
+   
   }
 
 }
