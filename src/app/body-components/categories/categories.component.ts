@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-categories",
@@ -73,9 +74,11 @@ export class CategoriesComponent implements OnInit {
     }
   };
 
-  constructor() {}
-
+  constructor(private router: Router) {}
+  public href: string = "";
   ngOnInit() {
     console.log(this.categories);
+    this.href = this.router.url;
+    console.log(this.router.url);
   }
 }

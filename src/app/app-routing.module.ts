@@ -11,7 +11,8 @@ import { CategoriesComponent } from "./body-components/categories/categories.com
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
-  { path: "category", component: CategoriesComponent }
+  { path: "store/men", component: CategoriesComponent },
+  { path: "store/women", component: CategoriesComponent }
 ];
 
 @NgModule({
