@@ -16,7 +16,7 @@ export class SignUpComponent implements OnInit {
     this.form = this.user.group({
       name: [''],
       email: [''],
-      confirmePassword: [''],
+      confirmedPassword: [''],
       password: ['']
     })
   }
@@ -31,14 +31,17 @@ export class SignUpComponent implements OnInit {
     formData.append("name", this.form.get('name').value);
     formData.append("email", this.form.get('email').value);
     formData.append("password", this.form.get('password').value);
+    formData.append("confirmedPassword", this.form.get('confirmedPassword').value);
+
     
     var obj = {
-      name: formData.getAll('name'),
-      email: formData.getAll('email'),
-      password: formData.getAll('password'),
+      name: formData.getAll('name')[0],
+      email: formData.getAll('email')[0],
+      password: formData.getAll('password')[0],
+      confirmedPassword: formData.getAll('confirmedPassword')[0],
 
     }
- 
+    // console.log(obj.confirmePassword)
    return this.http.post('http://localhost:8080/api/user/register', obj).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
