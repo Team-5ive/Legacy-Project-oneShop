@@ -1,1 +1,61 @@
-<p>footer works!</p>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+<footer id="foot" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h5><i class="fa fa-road"></i> Check Undefined Team on Github.</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/Malik-Altawati" target="_blank"><i
+                                        class="fab fa-github"></i> Malik
+                                    Altawati</a></li>
+                            <li><a href="https://github.com/SofianSaleh" target="_blank"><i class="fab fa-github"></i>
+                                    Sofian Saleh</a>
+                            </li>
+                            <li><a href="https://github.com/mohamed-fared" target="_blank"><i class="fab fa-github"></i>
+                                    Mohammed
+                                    Fareed</a></li>
+                            <li><a href="https://github.com/uizil" target="_blank"><i class="fab fa-github"></i> Hamza
+                                    Danden</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h6><i class="fab fa-whatsapp"></i> &nbsp;<i class="fab fa-viber"></i> &nbsp; <i
+                                class="fas fa-phone-square-alt"></i>
+                            &nbsp; +218-989-9898</h6>
+                        <!-- <h6><i class="fab fa-viber"></i> +218-989-9898</h6> -->
+                        <!-- <h6><i class="fab fa-instagram"></i> @_ONESHOP</h6> -->
+                        <h6><i class="fab fa-facebook-f"></i> &nbsp; <i class="fab fa-instagram"></i> &nbsp; <i
+                                class="fab fa-twitter"></i> @_ONESHOP</h6>
+                        <h6><i class="fab fa-google"></i> Contact@ONESHOP.COM</h6>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-2">
+                <hr>
+            </div>
+            <div class="col-md-5">
+                <h5 class="text-md-center">Contact Us</h5>
+                <form [formGroup]="form" (ngSubmit)="submitForm()">
+                    <fieldset class="form-group">
+                        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                            placeholder="Enter Email">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <textarea formControlName="message" class="form-control" id="exampleMessage"
+                            placeholder="Write Message"></textarea>
+                    </fieldset>
+                    <fieldset class="form-group text-xs-right">
+                        <button class="btn btn-secondary-outline btn-lg">Send</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <p id="copy">
+            &copy; Copyright 2020 ONESHOP
+        </p>
+    </div>
+</footer>

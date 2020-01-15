@@ -25,6 +25,7 @@ import { ProductDetailsComponent } from "./body-components/product-details/produ
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,9 +52,10 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
