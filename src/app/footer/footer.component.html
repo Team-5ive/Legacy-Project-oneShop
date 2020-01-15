@@ -1,6 +1,6 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 
-<footer class="footer">
+<footer id="foot" class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -39,15 +39,17 @@
             </div>
             <div class="col-md-5">
                 <h5 class="text-md-center">Contact Us</h5>
-                <form>
+                <form [formGroup]="form" (ngSubmit)="submitForm()">
                     <fieldset class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                            placeholder="Enter Email">
                     </fieldset>
                     <fieldset class="form-group">
-                        <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                        <textarea formControlName="message" class="form-control" id="exampleMessage"
+                            placeholder="Write Message"></textarea>
                     </fieldset>
                     <fieldset class="form-group text-xs-right">
-                        <button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+                        <button class="btn btn-secondary-outline btn-lg">Send</button>
                     </fieldset>
                 </form>
             </div>

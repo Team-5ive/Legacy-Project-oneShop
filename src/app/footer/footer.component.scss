@@ -15,7 +15,9 @@ body {
   margin-bottom: 300px;
 }
 .footer {
-  position: absolute;
+  position: static;
+  display: flex;
+  // position: absolute;
   bottom: 0;
   width: 100%;
   align-content: center;
@@ -36,7 +38,7 @@ body {
 /* Sticky footer style and color
 -------------------------------------------------- */
 footer {
-  padding-top: 30px;
+  padding-top: 7px;
   background-color: #292c2f;
   color: #bbb;
 }
