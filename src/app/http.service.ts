@@ -12,6 +12,7 @@ export class HttpService {
     confirmedPassword: "confirmedPassword"
   };
   constructor(private http: HttpClient) {}
+
   //example of how to do a get request
 
   getUsers() {

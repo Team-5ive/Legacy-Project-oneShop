@@ -25,6 +25,11 @@ import { CategoriesComponent } from "./body-components/categories/categories.com
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,4 +62,4 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
