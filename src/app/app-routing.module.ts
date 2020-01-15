@@ -10,7 +10,7 @@ import { CategoriesComponent } from "./body-components/categories/categories.com
  * */
 
 const routes: Routes = [
-  { path: "home", component: HomeComponent },
+  { path: "", component: HomeComponent },
   { path: "store/men", component: CategoriesComponent },
   { path: "store/women", component: CategoriesComponent }
 ];
