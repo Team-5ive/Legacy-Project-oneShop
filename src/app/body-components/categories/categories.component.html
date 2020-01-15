@@ -1,1 +1,15 @@
-<p>categories works!</p>
+<!-- Expected to get a gender specification from the home component
+To refactore this
+-->
+<h1>All {{ categories.men.gender }}</h1>
+
+<div class="container" *ngFor="let item of categories.men.tags">
+  <div class="row">
+    <div class="column">
+      <a href="#" routerLink="/men/{{ item.tagName }}"
+        ><img src="{{ item.tagImage }}" class="images" />
+        <p>{{ item.tagName }}</p>
+      </a>
+    </div>
+  </div>
+</div>
