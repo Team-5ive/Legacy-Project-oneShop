@@ -1,8 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { MenComponent } from "./dashboard/men/men.component";
-import { WomenComponent } from "./dashboard/women/women.component";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
+import { CategoriesComponent } from "./body-components/categories/categories.component";
 
 /**
  *  import files
@@ -11,10 +10,9 @@ import { HomeComponent } from './home/home.component';
  * */
 
 const routes: Routes = [
-  { path: '' , component: HomeComponent },
-  { path: 'store/women', component: WomenComponent },
-  { path: 'store/men', component: MenComponent },
-  
+  { path: "home", component: HomeComponent },
+  { path: "store/men", component: CategoriesComponent },
+  { path: "store/women", component: CategoriesComponent }
 ];
 
 @NgModule({
@@ -22,5 +20,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-// add here your component route  so you can add them in app.moudel (for best practice) 
-export const routingComponents = [MenComponent,WomenComponent,HomeComponent]

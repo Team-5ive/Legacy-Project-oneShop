@@ -1,1 +1,31 @@
-<p>categories works!</p>
+<!-- Expected to get a gender specification from the home component
+To refactore this
+-->
+<div *ngIf="this.href === '/store/men'; then men; else women"></div>
+<ng-template #men>
+  <h1>All {{ categories.men.gender }}</h1>
+  <div class="container" *ngFor="let item of categories.men.tags">
+    <div class="row">
+      <div class="column">
+        <a href="#" routerLink="/men/{{ item.tagName }}"
+          ><img src="{{ item.tagImage }}" class="images" />
+          <p>{{ item.tagName }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #women>
+  <h1>All {{ categories.women.gender }}</h1>
+  <div class="container" *ngFor="let item of categories.women.tags">
+    <div class="row">
+      <div class="column">
+        <a href="#" routerLink="/women/{{ item.tagName }}"
+          ><img src="{{ item.tagImage }}" class="images" />
+          <p>{{ item.tagName }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-template>

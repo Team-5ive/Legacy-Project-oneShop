@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-import { AppRoutingModule , routingComponents} from "./app-routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 // we need to import ReactiveFormsModule and assign it in imports
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -25,12 +25,12 @@ import { CategoriesComponent } from "./body-components/categories/categories.com
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 
-
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     FooterComponent,
+    HomeComponent,
     HeaderComponent,
     AccountComponent,
     CartComponent,
@@ -38,19 +38,21 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
     LoginComponent,
     SignUpComponent,
     AddProductComponent,
-    routingComponents,// this variable  will hold all the component in the route.module so you dont need witre it here again
+    MenComponent,
+    WomenComponent,
     NavBarComponent,
     OredersComponent,
     SideBarComponent,
     CategoriesComponent,
     ProductDetailsComponent,
-    ProductListComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
