@@ -1,5 +1,4 @@
 <h1>Check our all our {{ this.href[1] }}</h1>
-
 <div class="container" *ngFor="let item of lists">
   <mdb-card>
     <div class="view rgba-white-slight waves-light image" mdbWavesEffect>
@@ -17,7 +16,14 @@
         {{ item.price }}
       </mdb-card-text>
 
-      <a href="#" mdbBtn color="primary" mdbWavesEffect>More info</a>
+      <a
+        mdbBtn
+        color="primary"
+        mdbWavesEffect
+        (click)="moreInfo(item._id)"
+        routerLink="/store/{{ this.href[0] }}/{{ this.href[1] }}/productDetails"
+        >More info
+      </a>
     </mdb-card-body>
   </mdb-card>
 </div>
