@@ -1,25 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../../http.service";
+import { VariablesService } from "../../variables.service";
 
 @Component({
-  selector: 'app-product-details',
-  templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss']
+  selector: "app-product-details",
+  templateUrl: "./product-details.component.html",
+  styleUrls: ["./product-details.component.scss"]
 })
 export class ProductDetailsComponent implements OnInit {
+  product = {};
+  Id: String = "";
 
-   product = {}
-
-  constructor(private _http:HttpService) { }
+  constructor(private _http: HttpService, private variable: VariablesService) {}
 
   ngOnInit() {
-
-
-    this._http.getProducts().subscribe(data => {this.product = data
-    return this.product})
-
+    this.Id = this.variable.Id;
+    this._http.getProducts(this.Id).subscribe(data => {
+      this.product = data;
+    });
   }
-  
-  
-
 }
