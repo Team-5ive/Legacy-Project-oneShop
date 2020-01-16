@@ -23,8 +23,7 @@ import { SideBarComponent } from "./dashboard/side-bar/side-bar.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
-
-
+import { MDBBootstrapModule } from "angular-bootstrap-md";
 
 @NgModule({
   declarations: [
@@ -53,9 +52,10 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
