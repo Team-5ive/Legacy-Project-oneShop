@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule , routingComponents} from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
@@ -25,12 +25,12 @@ import { ProductDetailsComponent } from "./body-components/product-details/produ
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     FooterComponent,
-    HomeComponent,
     HeaderComponent,
     AccountComponent,
     CartComponent,
@@ -38,14 +38,13 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
     LoginComponent,
     SignUpComponent,
     AddProductComponent,
-    MenComponent,
-    WomenComponent,
+    routingComponents,// this variable  will hold all the component in the route.module so you dont need witre it here again
     NavBarComponent,
     OredersComponent,
     SideBarComponent,
     CategoriesComponent,
     ProductDetailsComponent,
-    ProductListComponent
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,

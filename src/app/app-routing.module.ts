@@ -5,6 +5,8 @@ import { HomeComponent } from "../app/home/home.component";
 import { LoginComponent } from "../app/user/login/login.component";
 import { CartComponent } from "../app/user/cart/cart.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
+
+import { CartComponent } from "./user/cart/cart.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 
 /**
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "store/men", component: CategoriesComponent },
   { path: "store/women", component: CategoriesComponent },
+  { path: 'cart', component: CartComponent }
   { path: "store/men/tops", component: ProductListComponent },
   { path: "store/men/shirts", component: ProductListComponent },
   { path: "store/men/jeans", component: ProductListComponent },
@@ -28,6 +31,7 @@ const routes: Routes = [
   { path: "store/women/jackets", component: ProductListComponent },
   { path: "store/women/outerwear", component: ProductListComponent },
   { path: "store/women/jeans", component: ProductListComponent }
+
 ];
 
 @NgModule({
@@ -35,3 +39,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+// add here your component route  so you can add them in app.moudel (for best practice) 
+export const routingComponents = [HomeComponent,CategoriesComponent,CartComponent]
