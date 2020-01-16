@@ -32,8 +32,15 @@ export class HttpService {
     );
     // to console log the response
   }
-  getproducts() {
+  getProducts() {
     return this.http.get("http://localhost:8080/api/customer_products");
     //now go to the home component
   }
+  getMenProduct(){
+    return this.http.get("http://localhost:8080/api/customer_products/men")
+  }
+  getWomenProduct(){
+    return this.http.get("http://localhost:8080/api/customer_products/women")
+  }
+
 }

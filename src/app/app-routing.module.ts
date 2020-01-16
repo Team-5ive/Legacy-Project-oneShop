@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
-
+import { CartComponent } from "./user/cart/cart.component";
 /**
  *  import files
  * add them to the routes array in the form of
@@ -12,7 +12,8 @@ import { CategoriesComponent } from "./body-components/categories/categories.com
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "store/men", component: CategoriesComponent },
-  { path: "store/women", component: CategoriesComponent }
+  { path: "store/women", component: CategoriesComponent },
+  { path: 'cart', component: CartComponent }
 ];
 
 @NgModule({
@@ -21,4 +22,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 // add here your component route  so you can add them in app.moudel (for best practice) 
-export const routingComponents = [HomeComponent,CategoriesComponent]
+export const routingComponents = [HomeComponent,CategoriesComponent,CartComponent]
