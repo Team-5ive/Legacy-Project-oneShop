@@ -11,7 +11,10 @@ export class HttpService {
     password: "pasword",
     confirmedPassword: "confirmedPassword"
   };
-  constructor(private http: HttpClient) { }
+
+  Token:string = ''
+  constructor(private http: HttpClient, ) {}
+
 
   getProducts(id: String) {
     console.log(id);
@@ -24,4 +27,6 @@ export class HttpService {
   getWomenProduct() {
     return this.http.get("http://localhost:8080/api/customer_products/women");
   }
+
+
 }

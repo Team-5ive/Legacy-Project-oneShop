@@ -12,6 +12,7 @@ import { MenComponent } from "./dashboard/men/men.component";
 import { WomenComponent } from "./dashboard/women/women.component";
 import { AddProductComponent } from "./dashboard/add-product/add-product.component";
 
+
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 
@@ -27,6 +28,11 @@ const routes: Routes = [
       { path: "", component: AddProductComponent }
     ]
   },
+
+
+  
+  
+
 
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
@@ -56,6 +62,7 @@ const routes: Routes = [
       { path: "jeans", component: ProductListComponent }
     ]
   },
+
 
   //Routes for the product details
   { path: "store/men/tops/productDetails", component: ProductDetailsComponent },
@@ -90,7 +97,8 @@ const routes: Routes = [
   {
     path: "store/women/jeans/productDetails",
     component: ProductDetailsComponent
-  }
+  },
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
