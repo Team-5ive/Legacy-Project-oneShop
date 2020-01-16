@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-women',
@@ -8,32 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class WomenComponent implements OnInit {
 
 
-  women = {
-    gender: "Women",
-    tags: [
-      {
-        tagName: "Jackets",
-        tagImage: "https://ae01.alicdn.com/kf/HTB1ta5XLpXXXXXcXXXXq6xXFXXXN/2019-Brand-New-Jacket-Men-Top-Design-Casual-Outwear-Spring-Autumn-Slim-Fit-Solid-Mens-Jackets.jpg",
-        tagLink: "/store/women/jackets"
-      },
-      {
-        tagName: "Outerwear",
-        tagImage: "https://oldnavy.gap.com/webcontent/0016/963/918/cn16963918.jpg",
-        tagLink: "/store/women/outerwear"
-      },
-      {
-        tagName: "Jeans",
-        tagImage: "https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/1.jpg",
-        tagLink: "/store/women/jeans"
-      }
-    ]
-  }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-
-    console.log(this.women)
+    return this.http.get('http://localhost:8080/api/allproducts').subscribe(
+      (response: any[]) => {
+        var results = []
+        for (var i = 0; i < response.length; i++) {
+          if (response[i]["category"] === 'Women') {
+            results.push(response[i])
+          }
+        }
+        console.log(results)
+        alert("console just logged all women products")
+      },
+      (error) => {
+        console.log("")
+      }
+    )
   }
 
 }
