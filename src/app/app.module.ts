@@ -26,6 +26,7 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -8,6 +8,5 @@ export class VariablesService {
   constructor() {}
   getVariables(id) {
     this.Id = id;
-    console.log(this.Id);
   }
 }

@@ -17,7 +17,6 @@ export class ProductDetailsComponent implements OnInit {
     this.Id = this.variable.Id;
     this._http.getProducts(this.Id).subscribe(data => {
       this.product = data;
-      console.log(this.product);
     });
   }
 }

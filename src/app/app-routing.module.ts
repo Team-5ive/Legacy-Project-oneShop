@@ -9,12 +9,6 @@ import { CartComponent } from "./user/cart/cart.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 
-/**
- *  import files
- * add them to the routes array in the form of
- * { path: 'name of the route', component: name of the component }
- * */
-
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
