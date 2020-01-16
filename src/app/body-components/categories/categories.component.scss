@@ -1,10 +1,26 @@
-div {
-  display: inline; /* the default for span */
-  margin: 25px;
-  padding: 5px;
-}
+// div {
+//   display: inline; /* the default for span */
+//   margin: 25px;
+//   padding: 5px;
+// }
 
-.images {
-  width: 200px;
-  height: 200px;
+// .images {
+//   width: 200px;
+//   height: 200px;
+// }
+
+.container {
+  width: 300px;
+  height: 225px;
+  display: inline-block;
+  margin-bottom: 15%;
+}
+h4 {
+  text-align: center;
+  font-size: 2em;
+  font-family: "Times New Roman", Times, serif;
+}
+con {
+  height: 225px;
+  width: 0px;
 }

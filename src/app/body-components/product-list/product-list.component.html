@@ -1,1 +1,23 @@
-<p>product-list works!</p>
+<h1>Check our all our {{ this.href[1] }}</h1>
+
+<div class="container" *ngFor="let item of lists">
+  <mdb-card>
+    <div class="view rgba-white-slight waves-light image" mdbWavesEffect>
+      <mdb-card-img src="{{ item.image }}" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <mdb-card-body>
+      <mdb-card-title>
+        <h4>{{ item.title }}</h4>
+      </mdb-card-title>
+
+      <mdb-card-text>
+        {{ item.price }}
+      </mdb-card-text>
+
+      <a href="#" mdbBtn color="primary" mdbWavesEffect>More info</a>
+    </mdb-card-body>
+  </mdb-card>
+</div>
