@@ -6,7 +6,6 @@ import { LoginComponent } from '../app/user/login/login.component';
 import { CartComponent } from '../app/user/cart/cart.component';
 import { CategoriesComponent } from './body-components/categories/categories.component';
 
-
 /**
  *  import files
  * add them to the routes array in the form of
@@ -15,11 +14,13 @@ import { CategoriesComponent } from './body-components/categories/categories.com
 
 const routes: Routes = [
 
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent  },
   { path: 'login', component: LoginComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'store/men', component: CategoriesComponent },
-  { path: 'store/women', component: CategoriesComponent }
+  { path: 'cart', component: CartComponent  },
+  { path: 'store/men', component: CategoriesComponent  },
+  { path: 'store/women', component: CategoriesComponent },
+  
+  { path: '**', redirectTo: 'login' }
 
 
 ];

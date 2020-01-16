@@ -11,7 +11,9 @@ export class HttpService {
     password: "pasword",
     confirmedPassword: "confirmedPassword"
   };
-  constructor(private http: HttpClient) {}
+
+  Token:string = ''
+  constructor(private http: HttpClient, ) {}
 
   //example of how to do a get request
 
@@ -33,4 +35,6 @@ export class HttpService {
     );
     // to console log the response
   }
+
+
 }
