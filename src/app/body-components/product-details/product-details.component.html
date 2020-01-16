@@ -8,26 +8,37 @@
     <div class="col">
             <div class="card  shadow w-auto h-100 mr-3 ">
                 <div class="card-body ">
-                    <div >
-                        <span class="mb-2 " ><strong >category:{{product[0].category}}</strong></span><br>
-                        <span class="mb-2 " ><strong >title:{{product[0].title}} </strong></span><br>
-                        <span class="mb-2 " ><strong >description:{{product[0].description}} </strong></span>
+                    <div class="" style="text-align: center;"> 
+                        <span class="mb-2 " ><strong >category : {{product[0].category}}</strong></span><br>
+                        <span class="mb-2 " ><strong >title : {{product[0].title}} </strong></span><br>
+                        <span class="mb-2 " ><strong >description : {{product[0].description}} </strong></span>
                     </div>
                 <div class=" mt-3 bg-light text-dark">
-                    <span class="mb-2 " ><strong >Brand:<span class="text-secondary">{{product[0].brand}}</span> </strong></span><br>
-                    <span class="mb-2 "><strong >Price:<span class="text-secondary">{{product[0].price}}$</span></strong></span><br>
-                    <span class="mb-2 "><strong >Sizes:<span class="text-secondary">{{product[0].sizes}}</span> </strong></span><br>
-                    <span class="mb-2 "><strong >Color:<span class="text-secondary">{{product[0].color}}</span> </strong></span><br>
-                    <span class="mb-2 "><strong >Rating:<span class="text-secondary">{{product[0].rating}}</span></strong></span>
-
+                    <span class="mb-2 " ><strong class="p-3">Brand : <span class="text-secondary">{{product[0].brand}}</span> </strong></span><br>
+                    <span class="mb-2 "><strong class="p-3">Price : <span class="text-secondary">{{product[0].price}}$</span></strong></span><br>
+                    <span class="mb-2 "><strong class="p-3">Sizes : <span class="text-secondary">{{product[0].size[0]}}</span> </strong></span><br>
+                    <span class="mb-2 "><strong class="p-3">Color : <span class="text-secondary">{{product[0].color}}</span> </strong></span><br>
+                    <span class="mb-2 "><strong class="p-3">Rating : <span class="text-secondary">{{product[0].rating}}</span></strong></span>
                 </div>
-                <div class="col " >
-                     <button type="button" class="btn btn-primary float-right mt-3">Add To Cart </button>
+                <div class="row" >
+                    <div class="col">
+                        <div class="mt-3" style="text-align: center;" ><span  >Choose your size </span ></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="radio" name="size" value="M" checked> M<br>
+                        <input type="radio" name="size" value="L"> L
+                    </div>
+                </div>
+                
+                <div class="row " >
+                    <div class="col">
+                        <button type="button" class="btn btn-primary float-right mt-3">Add To Cart </button>
+                    </div>
                 </div> 
             </div>  
-            
-    </div>
-    
+        </div> 
 </div>
 
 
