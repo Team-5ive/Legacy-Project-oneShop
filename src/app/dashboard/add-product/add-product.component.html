@@ -1,1 +1,77 @@
-<p>add-product works!</p>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="form-group">
+        <label for="formGroupExampleInput">Product Name</label>
+        <input formControlName="ProductName" type="text" class="form-control" id="formGroupExampleInput"
+            placeholder="Product Name">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Product Price</label>
+        <input formControlName="ProductPrice" type="text" class="form-control" id="formGroupExampleInput2"
+            placeholder="Product Price">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput3">Product Description</label>
+        <input formControlName="ProductDescription" type="text" class="form-control" id="formGroupExampleInput3"
+            placeholder="Product Description">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput3">Product Image</label>
+        <input formControlName="ProductImage" type="text" class="form-control" id="formGroupExampleInput3"
+            placeholder="Product Image Link">
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputState">Catagorty</label>
+        <select formControlName="ProductCatagory" id="inputState" class="form-control">
+            <option selected disabled>Choose...</option>
+            <option>Men</option>
+            <option>Women</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputState">Brand</label>
+        <select formControlName="ProductBrand" id="inputState" class="form-control">
+            <option selected disabled>Choose...</option>
+            <option>brand1</option>
+            <option>brand2</option>
+            <option>brand3</option>
+            <option>brand4</option>
+            <option>brand5</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputState">Size</label>
+        <select formControlName="ProductSize" id="inputState" class="form-control">
+            <option selected disabled>Choose...</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputState">Tag</label>
+        <select formControlName="ProductTag" id="inputState" class="form-control">
+            <option selected disabled>Choose...</option>
+            <option>tops</option>
+            <option>jeans</option>
+            <option>jackets</option>
+            <option>shoes</option>
+            <option>t-shirts</option>
+            <option>outerwear</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputState">Color</label>
+        <select formControlName="ProductColor" id="inputState" class="form-control">
+            <option selected disabled>Choose...</option>
+            <option>white</option>
+            <option>red</option>
+            <option>green</option>
+            <option>blue</option>
+            <option>orange</option>
+            <option>black</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>

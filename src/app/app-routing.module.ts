@@ -4,6 +4,13 @@ import { HomeComponent } from '../app/home/home.component';
 import { LoginComponent } from '../app/user/login/login.component';
 import { CartComponent } from '../app/user/cart/cart.component';
 import { CategoriesComponent } from './body-components/categories/categories.component';
+import { DashboardComponent } from "./dashboard/dashboard.component"
+
+
+// import { HomeComponent } from '../app/home/home.component';
+// import { LoginComponent } from '../app/user/login/login.component';
+// import { CartComponent } from '../app/user/cart/cart.component';
+// import { CategoriesComponent } from './body-components/categories/categories.component';
 
 
 /**
@@ -17,7 +24,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: CartComponent },
   { path: 'store/men', component: CategoriesComponent },
-  { path: 'store/women', component: CategoriesComponent }
+  { path: 'store/women', component: CategoriesComponent },
+  { path: 'dashboard', component: DashboardComponent },
 
 ];
 
