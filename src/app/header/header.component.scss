@@ -1,51 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
-
-$primary:#6c757d;
+$primary: #6c757d;
 
 body {
-    margin: 0;
-    font-family: 'Nunito', 'sans-serif';
-    font-size: 18px;
+  margin: 0;
+  font-family: "Nunito", "sans-serif";
+  font-size: 18px;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 header {
-    background: $primary;
-    padding: 1em 0;
+  background: $primary;
+  padding: 1em 0;
 
-    a {
-        color: white;
-        text-decoration: none;
-    }
-    a.logo {
-        font-weight: bold;
-        font-family: 'Nunito', 'sans-serif';
-    }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a.logo {
+    font-weight: bold;
+    font-family: "Nunito", "sans-serif";
+  }
 
-    nav {
-        float: right;
+  nav {
+    float: right;
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            display: flex;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
 
-            li a {
-                padding: 1em;
+      li a {
+        padding: 1em;
 
-                &:hover {
-                    background: darken($primary, 10%);
-                }
-            }
+        &:hover {
+          background: darken($primary, 10%);
         }
+      }
     }
+  }
 }
 
 h1 {
-    margin-top: 2em;
+  margin-top: 2em;
 }
