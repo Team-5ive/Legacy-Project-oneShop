@@ -18,11 +18,12 @@ import { AddProductComponent } from "./dashboard/add-product/add-product.compone
 import { MenComponent } from "./dashboard/men/men.component";
 import { WomenComponent } from "./dashboard/women/women.component";
 import { NavBarComponent } from "./dashboard/nav-bar/nav-bar.component";
-import { OredersComponent } from "./dashboard/oreders/oreders.component";
 import { SideBarComponent } from "./dashboard/side-bar/side-bar.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
+import { AllproductsComponent } from './dashboard/allproducts/allproducts.component';
+import { OrdersComponent } from './dashboard/orders/orders.component';
 
 
 
@@ -42,11 +43,13 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
     MenComponent,
     WomenComponent,
     NavBarComponent,
-    OredersComponent,
+
     SideBarComponent,
     CategoriesComponent,
     ProductDetailsComponent,
-    ProductListComponent
+    ProductListComponent,
+    AllproductsComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

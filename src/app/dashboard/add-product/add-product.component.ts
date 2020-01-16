@@ -35,7 +35,7 @@ export class AddProductComponent implements OnInit {
       title: this.form.get('ProductName').value,
       price: this.form.get('ProductPrice').value,
       description: this.form.get('ProductDescription').value,
-      catagory: this.form.get('ProductCatagory').value,
+      category: this.form.get('ProductCatagory').value,
       brand: this.form.get('ProductBrand').value,
       image: this.form.get('ProductImage').value,
       size: this.form.get('ProductSize').value,
