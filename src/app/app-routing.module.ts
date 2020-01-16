@@ -7,9 +7,8 @@ import { CartComponent } from "../app/user/cart/cart.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
 
 import { CartComponent } from "./user/cart/cart.component";
-import { ProductListComponent } from "./body-components/product-list/product-list.component";
+import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";/**
 
-/**
  *  import files
  * add them to the routes array in the form of
  * { path: 'name of the route', component: name of the component }
@@ -21,6 +20,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "store/men", component: CategoriesComponent },
   { path: "store/women", component: CategoriesComponent },
+
   { path: 'cart', component: CartComponent }
   { path: "store/men/tops", component: ProductListComponent },
   { path: "store/men/shirts", component: ProductListComponent },
@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: "store/women/jackets", component: ProductListComponent },
   { path: "store/women/outerwear", component: ProductListComponent },
   { path: "store/women/jeans", component: ProductListComponent }
+
 
 ];
 
