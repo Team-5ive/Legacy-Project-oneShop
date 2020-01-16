@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../../http.service";
+import { VariablesService } from "../../variables.service";
 
 @Component({
   selector: "app-product-details",
@@ -8,12 +9,15 @@ import { HttpService } from "../../http.service";
 })
 export class ProductDetailsComponent implements OnInit {
   product = {};
+  Id: String = "";
 
-  constructor(private _http: HttpService) {}
+  constructor(private _http: HttpService, private variable: VariablesService) {}
 
   ngOnInit() {
-    console.log(Id);
-    // this._http.getProducts().subscribe(data => {this.product = data
-    // return this.product})
+    this.Id = this.variable.Id;
+    this._http.getProducts(this.Id).subscribe(data => {
+      this.product = data;
+      console.log(this.product);
+    });
   }
 }

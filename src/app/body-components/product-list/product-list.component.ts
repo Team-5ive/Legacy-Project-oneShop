@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Router } from "@angular/router";
 import { HttpClient } from "@angular/common/http";
-// import { ProductDetailsComponent } from "../product-details/product-details.component";
-
+import { VariablesService } from "../../variables.service";
 @Component({
   selector: "app-product-list",
   templateUrl: "./product-list.component.html",
@@ -11,9 +10,9 @@ import { HttpClient } from "@angular/common/http";
 export class ProductListComponent implements OnInit {
   constructor(
     private router: Router,
-    private http: HttpClient
-  ) // private details: ProductDetailsComponent
-  {}
+    private http: HttpClient,
+    private variables: VariablesService
+  ) {}
   public href: string = "";
   public array;
   public lists;
@@ -23,18 +22,15 @@ export class ProductListComponent implements OnInit {
     this.array = this.router.url.split("/");
     this.array.splice(0, 2);
     this.href = this.array;
-    // console.log(this.href);
     this.http
       .get(
         `http://localhost:8080/api/customer_products/${this.href[0]}/${this.href[1]}`
       )
       .subscribe(data => {
         this.lists = data;
-        // console.log(this.lists);
       });
   }
   moreInfo(id: string) {
-    console.log(id);
-    this.Id = id;
+    this.variables.getVariables(id);
   }
 }
