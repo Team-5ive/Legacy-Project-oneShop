@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule, routingComponents } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
@@ -18,20 +18,19 @@ import { AddProductComponent } from "./dashboard/add-product/add-product.compone
 import { MenComponent } from "./dashboard/men/men.component";
 import { WomenComponent } from "./dashboard/women/women.component";
 import { NavBarComponent } from "./dashboard/nav-bar/nav-bar.component";
-import { OredersComponent } from "./dashboard/oreders/oreders.component";
 import { SideBarComponent } from "./dashboard/side-bar/side-bar.component";
 import { CategoriesComponent } from "./body-components/categories/categories.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
-
-
+import { AllproductsComponent } from "./dashboard/allproducts/allproducts.component";
+import { OrdersComponent } from "./dashboard/orders/orders.component";
+import { MDBBootstrapModule } from "angular-bootstrap-md";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     FooterComponent,
-    HomeComponent,
     HeaderComponent,
     AccountComponent,
     CartComponent,
@@ -39,23 +38,29 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
     LoginComponent,
     SignUpComponent,
     AddProductComponent,
+    routingComponents, // this variable  will hold all the component in the route.module so you dont need witre it here again
+    NavBarComponent,
+    HomeComponent,
     MenComponent,
     WomenComponent,
-    NavBarComponent,
-    OredersComponent,
     SideBarComponent,
     CategoriesComponent,
     ProductDetailsComponent,
-    ProductListComponent
+    ProductListComponent,
+
+    AllproductsComponent,
+    OrdersComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
