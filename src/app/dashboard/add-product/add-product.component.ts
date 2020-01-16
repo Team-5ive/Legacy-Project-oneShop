@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-add-product',
@@ -28,32 +30,50 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  // alert(this.form.get('ProductName').value + this.form.get('ProductPrice').value + this.form.get('ProductDescription').value + this.form.get('ProductCatagory').value + this.form.get('ProductBrand').value)
-
   submitForm() {
     var obj = {
-      ProductName: this.form.get('ProductName').value,
-      ProductPrice: this.form.get('ProductPrice').value,
-      ProductDescription: this.form.get('ProductDescription').value,
-      ProductCatagory: this.form.get('ProductCatagory').value,
-      ProductBrand: this.form.get('ProductBrand').value,
-      ProductImage: this.form.get('ProductImage').value,
-      ProductSize: this.form.get('ProductSize').value,
-      ProductTag: this.form.get('ProductTag').value,
-      ProductColor: this.form.get('ProductColor').value,
+      title: this.form.get('ProductName').value,
+      price: this.form.get('ProductPrice').value,
+      description: this.form.get('ProductDescription').value,
+      catagory: this.form.get('ProductCatagory').value,
+      brand: this.form.get('ProductBrand').value,
+      image: this.form.get('ProductImage').value,
+      size: this.form.get('ProductSize').value,
+      tag: this.form.get('ProductTag').value,
+      color: this.form.get('ProductColor').value,
     }
 
     for (var key in obj) {
       if (obj[key] === "") {
-        alert("PLEASE FILL ALL FIELDS")
+        Swal.fire({
+          position: 'top',
+          icon: 'info',
+          text: 'PLEASE FILL ALL FIELDS',
+          timer: 1500
+        })
         return
       }
     }
-    // return this.http.post('http://localhost:8080/api/add/inquiry', obj).subscribe(
-    //   (response) => console.log(response),
-    //   (error) => console.log(error)
-    // )
-    console.log(obj)
+    return this.http.post('http://localhost:8080/api/add/product', obj).subscribe(
+      (response) => {
+        Swal.fire({
+          position: 'top',
+          icon: 'success',
+          title: 'Product Added Successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      },
+      (error) => {
+        Swal.fire({
+          position: 'top',
+          icon: 'success',
+          title: 'Product Added Successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    )
   }
 
 }
