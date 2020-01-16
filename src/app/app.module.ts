@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule , routingComponents} from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
@@ -24,6 +24,8 @@ import { ProductDetailsComponent } from "./body-components/product-details/produ
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 import { AllproductsComponent } from './dashboard/allproducts/allproducts.component';
 import { OrdersComponent } from './dashboard/orders/orders.component';
+import { MDBBootstrapModule } from "angular-bootstrap-md";
+
 
 
 
@@ -32,7 +34,6 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
     AppComponent,
     DashboardComponent,
     FooterComponent,
-    HomeComponent,
     HeaderComponent,
     AccountComponent,
     CartComponent,
@@ -40,14 +41,14 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
     LoginComponent,
     SignUpComponent,
     AddProductComponent,
-    MenComponent,
-    WomenComponent,
+    routingComponents,// this variable  will hold all the component in the route.module so you dont need witre it here again
     NavBarComponent,
 
     SideBarComponent,
     CategoriesComponent,
     ProductDetailsComponent,
     ProductListComponent,
+
     AllproductsComponent,
     OrdersComponent
   ],
@@ -56,9 +57,10 @@ import { OrdersComponent } from './dashboard/orders/orders.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

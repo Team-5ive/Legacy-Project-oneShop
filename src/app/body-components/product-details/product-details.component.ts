@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from "../../http.service";
 
 @Component({
   selector: 'app-product-details',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor() { }
+   product = {}
+
+  constructor(private _http:HttpService) { }
 
   ngOnInit() {
+
+
+    this._http.getProducts().subscribe(data => {this.product = data
+    return this.product})
+
   }
+  
+  
 
 }

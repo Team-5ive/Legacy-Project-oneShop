@@ -5,27 +5,44 @@ To refactore this
 <ng-template #men>
   <h1>All {{ categories.men.gender }}</h1>
   <div class="container" *ngFor="let item of categories.men.tags">
-    <div class="row">
-      <div class="column">
-        <a href="#" routerLink="/men/{{ item.tagName }}"
-          ><img src="{{ item.tagImage }}" class="images" />
-          <p>{{ item.tagName }}</p>
-        </a>
+    <mdb-card>
+      <div class="con">
+        <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+          <a href="#" routerLink="/store/men/{{ item.tagName.toLowerCase() }}">
+            <mdb-card-img
+              src="{{ item.tagImage }}"
+              alt="Card image cap"
+            ></mdb-card-img>
+            <mdb-card-title>
+              <h4>{{ item.tagName }}</h4>
+            </mdb-card-title>
+          </a>
+        </div>
       </div>
-    </div>
+    </mdb-card>
   </div>
 </ng-template>
 
 <ng-template #women>
   <h1>All {{ categories.women.gender }}</h1>
   <div class="container" *ngFor="let item of categories.women.tags">
-    <div class="row">
-      <div class="column">
-        <a href="#" routerLink="/women/{{ item.tagName }}"
-          ><img src="{{ item.tagImage }}" class="images" />
-          <p>{{ item.tagName }}</p>
-        </a>
+    <mdb-card>
+      <div class="con">
+        <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+          <a
+            href="#"
+            routerLink="/store/women/{{ item.tagName.toLowerCase() }}"
+          >
+            <mdb-card-img
+              src="{{ item.tagImage }}"
+              alt="Card image cap"
+            ></mdb-card-img>
+            <mdb-card-title>
+              <h4>{{ item.tagName }}</h4>
+            </mdb-card-title>
+          </a>
+        </div>
       </div>
-    </div>
+    </mdb-card>
   </div>
 </ng-template>
