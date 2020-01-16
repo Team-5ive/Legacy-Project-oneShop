@@ -11,7 +11,7 @@ export class HttpService {
     password: "pasword",
     confirmedPassword: "confirmedPassword"
   };
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProducts(id: String) {
     console.log(id);
