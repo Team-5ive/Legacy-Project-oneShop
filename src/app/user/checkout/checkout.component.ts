@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VariablesService } from "../../variables.service";
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private variable: VariablesService) { }
 
   ngOnInit() {
+    // console.log(localStorage.cart)
   }
 
 }

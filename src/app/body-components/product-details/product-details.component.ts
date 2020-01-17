@@ -21,11 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCart() {
-    var local = localStorage.getItem("cart")
-    var add = JSON.parse(local)
-    add.push(this.product)
-    localStorage.removeItem("cart")
-    add = JSON.stringify(add)
-    localStorage.setItem("cart", add)
+    this.variable.addItem(this.product)
+
   }
 }
