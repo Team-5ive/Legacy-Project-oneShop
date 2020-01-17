@@ -9,10 +9,11 @@ import { HttpService } from "./http.service";
 export class AppComponent {
   title = "OneShop";
 
-  constructor(private _http: HttpService) {}
+  constructor(private _http: HttpService) { }
 
   ngOnInit() {
+    // localStorage.getItem("cart");
+    localStorage.clear();
     localStorage.setItem("cart", "[]");
-    localStorage.getItem("cart");
   }
 }
