@@ -17,6 +17,7 @@ export class ProductListComponent implements OnInit {
     this.array.splice(0, 2);
     this.href = this.array;
 
+
     this.http
       .get(
         `http://localhost:8080/api/customer_products/${this.href[0]}/${this.href[1]}`
