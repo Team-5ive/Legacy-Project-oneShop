@@ -39,10 +39,17 @@ export class SignUpComponent implements OnInit {
 
     return this.http
       .post("http://localhost:8080/api/user/register", obj)
-      .subscribe(
-        response => console.log(response),
-        error => console.log(error)
-      );
+      .subscribe(response => {
+        console.log(response);
+        if (response["registred"]) {
+          localStorage.setItem("token", ` ${response["token"]}`);
+          this.setToken();
+          this.router.navigate([""]);
+        } else {
+          alert("Email Or Password are wrong");
+          this.router.navigate(["signup"]);
+        }
+      });
   }
 
   setToken() {
