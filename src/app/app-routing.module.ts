@@ -12,13 +12,7 @@ import { WomenComponent } from "./dashboard/women/women.component";
 import { AddProductComponent } from "./dashboard/add-product/add-product.component";
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
-/**
-
-*  import files
- * add them to the routes array in the form of
- * { path: 'name of the route', component: name of the component }
- * */
-
+import { SignUpComponent } from "./user/sign-up/sign-up.component";
 
 const routes: Routes = [
   {
@@ -34,6 +28,7 @@ const routes: Routes = [
   },
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
+  { path: "signup", component: SignUpComponent },
   { path: "cart", component: CartComponent },
   { path: "store/men", component: CategoriesComponent },
   { path: "store/women", component: CategoriesComponent },
@@ -60,7 +55,6 @@ const routes: Routes = [
       { path: "jeans", component: ProductListComponent }
     ]
   },
-
 
   //Routes for the product details
   { path: "store/men/tops/productDetails", component: ProductDetailsComponent },
@@ -96,14 +90,15 @@ const routes: Routes = [
     path: "store/women/jeans/productDetails",
     component: ProductDetailsComponent
   },
-  { path: '**', redirectTo: 'login' }
+  { path: "signup", component: SignUpComponent },
+  { path: "**", redirectTo: "login" }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 // add here your component route  so you can add them in app.moudel (for best practice)
 export const routingComponents = [
   HomeComponent,

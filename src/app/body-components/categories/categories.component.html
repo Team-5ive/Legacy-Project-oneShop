@@ -1,7 +1,7 @@
 <!-- Expected to get a gender specification from the home component
 To refactore this
 -->
-<div *ngIf="this.href === '/store/men'; then men; else women"></div>
+<div *ngIf="this.href === '/store/men'; then men; else women" class="all"></div>
 <ng-template #men>
   <div class="m-3 ">
     <h1>All {{ categories.men.gender }} Products </h1>
