@@ -50,9 +50,12 @@ const routes: Routes = [
     path: "store/women",
     component: ProductListComponent,
     children: [
+      { path: "shoes", component: ProductListComponent },
+      { path: "tops", component: ProductListComponent },
       { path: "jackets", component: ProductListComponent },
       { path: "outerwear", component: ProductListComponent },
-      { path: "jeans", component: ProductListComponent }
+      { path: "jeans", component: ProductListComponent },
+      { path: "t-shirts", component: ProductListComponent }
     ]
   },
 

@@ -86,7 +86,7 @@ export class CategoriesComponent implements OnInit {
           tagName: "Tops",
           tagImage:
             "https://i.pinimg.com/originals/78/76/ed/7876eda53aca041697e20f5442e45a67.jpg",
-          tagLink: "/store/men/tops"
+          tagLink: "/store/women/tops"
         }
       ]
     }
