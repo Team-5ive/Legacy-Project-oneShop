@@ -1,1 +1,27 @@
-<p>allproducts works!</p>
+<!-- <div >
+  <div class="list-group-flush">
+    <div class="list-group-item">
+      <p class="mb-0">
+        <img src="{{ item.image }}" aria-hidden="true" />
+      </p>
+    </div>
+  </div>
+</div> -->
+<div class="containet">
+  <div class="card card-cascade narrower coo" *ngFor="let item of allProducts">
+    <!-- Card image -->
+    <div class="view view-cascade overlay">
+      <img class="card-img-top" src="{{ item.image }}" alt="Card image cap" />
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body card-body-cascade">
+      <!-- Title -->
+      <h4 class="font-weight-bold card-title">{{ item.name }}</h4>
+      <!-- Text -->
+
+      <!-- Button -->
+      <a class="btn btn-unique">Button</a>
+    </div>
+  </div>
+</div>

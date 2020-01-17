@@ -14,7 +14,9 @@ export class AllproductsComponent implements OnInit {
     return this.http.get("http://localhost:8080/api/allproducts").subscribe(
       response => {
         console.log(response);
-        alert("console just logged all products");
+        // alert("console just logged all products");
+        this.allProducts = response;
+        console.log(this.allProducts);
       },
       error => {
         console.log("");
