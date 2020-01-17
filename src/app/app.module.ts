@@ -25,6 +25,7 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
 import { AllproductsComponent } from "./dashboard/allproducts/allproducts.component";
 import { OrdersComponent } from "./dashboard/orders/orders.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { UpdatFormComponent } from './dashboard/allproducts/updat-form/updat-form.component';
 
 
 
@@ -52,7 +53,8 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 
     AllproductsComponent,
     OrdersComponent,
-    AddProductComponent
+    AddProductComponent,
+    UpdatFormComponent
   ],
   imports: [
     BrowserModule,

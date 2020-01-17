@@ -41,8 +41,17 @@
       <li class="list-group-item">{{ item.tag }}</li>
     </ul>
     <div class="card-body">
-      <a class="card-link">Update</a>
-      <a class="card-link" (click)="delete(item._id)">Delete</a>
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="updates(item._id)"
+        routerLink="/dashboard/updateproduct"
+      >
+        Update
+      </button>
+      <button type="button" class="btn btn-danger" (click)="delete(item._id)">
+        Delete
+      </button>
     </div>
   </div>
 </div>

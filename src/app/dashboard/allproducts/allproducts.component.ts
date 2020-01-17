@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { VariablesService } from "./../../variables.service";
 import Swal from "sweetalert2";
 
 @Component({
@@ -9,7 +10,7 @@ import Swal from "sweetalert2";
 })
 export class AllproductsComponent implements OnInit {
   allProducts: any = [];
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private variable: VariablesService) {}
 
   ngOnInit() {
     return this.http.get("http://localhost:8080/api/allproducts").subscribe(
@@ -26,19 +27,38 @@ export class AllproductsComponent implements OnInit {
   }
 
   delete(id: string) {
-    this.http
-      .delete(`http://localhost:8080/api/delete/product/${id}`)
-      .subscribe(data => {
-        if (data["success"]) {
-          Swal.fire({
-            position: "top",
-            icon: "success",
-            title: "Logged In successfully",
-            showConfirmButton: false,
-            timer: 1500
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(result => {
+      if (result.value) {
+        this.http
+          .delete(`http://localhost:8080/api/delete/product/${id}`)
+          .subscribe(data => {
+            console.log(data);
+            if (data["success"]) {
+              // Swal.fire({
+              //   position: "top",
+              //   icon: "success",
+              //   title: "Logged In successfully",
+              //   showConfirmButton: false,
+              //   timer: 1500
+              // });
+
+              this.ngOnInit();
+            }
           });
-          this.ngOnInit();
-        }
-      });
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+  }
+
+  async updates(id: string) {
+    this.variable.updateProductId(id);
   }
 }
