@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
-import {HttpService} from './../http.service'
+import { Router } from '@angular/router'
+import { HttpService } from './../http.service'
 
 @Component({
   selector: 'app-header',
@@ -9,18 +9,28 @@ import {HttpService} from './../http.service'
 })
 export class HeaderComponent implements OnInit {
   token: string;
-  constructor(private router:Router, private _http: HttpService) { 
+  constructor(private router: Router, private _http: HttpService) {
   }
   logout() {
     localStorage.clear()
     this.token = ''
-  }
-  getIt(t:string){
-    this.token = t
-    console.log(this.token)
-  }
-  ngOnInit() {
+    this._http.Token = ''
   }
 
+
+  ngOnInit() {
+    var that  = this
+    
+    var inter = setInterval(function () {
+      // console.log(that, this)
+      that.token = that._http.Token
+      // console.log(that.token)
+      if (that.token.length > 0) {
+        clearInterval(inter)
+        that.ngOnInit()
+      }
+    }, 3000);
+    localStorage.clear()
+  }
 
 }

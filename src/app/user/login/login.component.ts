@@ -2,8 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import {Router} from "@angular/router"
+import {HttpService} from './../../http.service'
 
-import {HeaderComponent} from '../../header/header.component'
+// import {HeaderComponent} from '../../header/header.component'
 
 @Component({
   selector: "app-login",
@@ -12,7 +13,7 @@ import {HeaderComponent} from '../../header/header.component'
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  constructor(public user: FormBuilder, private http: HttpClient, private router: Router, private header: HeaderComponent) {
+  constructor(public user: FormBuilder, private http: HttpClient, private router: Router, public _http: HttpService) {
     this.form = this.user.group({
       email: [""],
       password: [""]
@@ -20,6 +21,8 @@ export class LoginComponent implements OnInit {
   }
   token:string = ''
   ngOnInit() {
+     
+    
 
   }
   
@@ -34,7 +37,7 @@ export class LoginComponent implements OnInit {
       .subscribe(response => {
         if (response) {
           localStorage.setItem("token", ` ${response["token"]}`)
-          this.router.navigate([''])
+          // this.router.navigate([''])
         } else {
           alert("Email Or Password are wrong");
         }
@@ -42,11 +45,14 @@ export class LoginComponent implements OnInit {
   }
   
    setToken() {
-     setTimeout(() => {
+     
+    setTimeout(()=> {
       this.token =  localStorage.getItem('token')
-      this.header.getIt(this.token)
-      // console.log(this.token)
-    }, 500);
+      
+      console.log(this.token)
+      this._http.Token = this.token
+      this.router.navigate([''])
+    }, 200)
 
 
   }

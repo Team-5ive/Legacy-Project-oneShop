@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "./http.service";
 
-
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -10,9 +9,10 @@ import { HttpService } from "./http.service";
 export class AppComponent {
   title = "OneShop";
 
+  constructor(private _http: HttpService) {}
 
-  constructor(private _http: HttpService) { }
-
-
-
+  ngOnInit() {
+    localStorage.setItem("cart", "[]");
+    localStorage.getItem("cart");
+  }
 }
