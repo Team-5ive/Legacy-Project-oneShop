@@ -1,51 +1,27 @@
 <form [formGroup]="form" (ngSubmit)="submitForm()">
   <div class="form-group">
     <label for="formGroupExampleInput">Product Name</label>
-    <input
-      formControlName="ProductName"
-      type="text"
-      class="form-control"
-      id="formGroupExampleInput"
-      placeholder="Product Name"
-    />
+    <input formControlName="ProductName" type="text" class="form-control" id="formGroupExampleInput"
+      placeholder="Product Name" />
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">Product Price</label>
-    <input
-      formControlName="ProductPrice"
-      type="text"
-      class="form-control"
-      id="formGroupExampleInput2"
-      placeholder="Product Price"
-    />
+    <input formControlName="ProductPrice" type="text" class="form-control" id="formGroupExampleInput2"
+      placeholder="Product Price" />
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput3">Product Description</label>
-    <input
-      formControlName="ProductDescription"
-      type="text"
-      class="form-control"
-      id="formGroupExampleInput3"
-      placeholder="Product Description"
-    />
+    <input formControlName="ProductDescription" type="text" class="form-control" id="formGroupExampleInput3"
+      placeholder="Product Description" />
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput3">Product Image</label>
-    <input
-      formControlName="ProductImage"
-      type="text"
-      class="form-control"
-      id="formGroupExampleInput3"
-      placeholder="Product Image Link"
-    />
+    <input formControlName="ProductImage" type="text" class="form-control" id="formGroupExampleInput3"
+      placeholder="Product Image Link" />
   </div>
   <div class="form-group col-md-12">
     <label for="inputState">Catagorty</label>
-    <select
-      formControlName="ProductCatagory"
-      id="inputState"
-      class="form-control"
-    >
+    <select formControlName="ProductCatagory" id="inputState" class="form-control">
       <option selected disabled>Choose...</option>
       <option>Men</option>
       <option>Women</option>

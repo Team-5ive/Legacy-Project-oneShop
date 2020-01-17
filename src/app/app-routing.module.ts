@@ -31,6 +31,7 @@ const routes: Routes = [
 
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
+  { path: "signup", component: SignUpComponent },
   { path: "cart", component: CartComponent },
   { path: "store/men", component: CategoriesComponent },
   { path: "store/women", component: CategoriesComponent },
@@ -100,7 +101,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 // add here your component route  so you can add them in app.moudel (for best practice)
 export const routingComponents = [
   HomeComponent,

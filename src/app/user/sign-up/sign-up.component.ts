@@ -1,8 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import Swal from 'sweetalert2'
+import { Router } from "@angular/router"
 import { HttpService } from "./../../http.service";
-import { Router } from "@angular/router";
 
 @Component({
   selector: "app-sign-up",
@@ -27,30 +28,45 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+
 
   submitForm() {
     var obj = {
-      name: this.form.get("name").value,
-      email: this.form.get("email").value,
-      password: this.form.get("password").value,
-      confirmedPassword: this.form.get("confirmedPassword").value
-    };
+      name: this.form.get('name').value,
+      email: this.form.get('email').value,
+      password: this.form.get('password').value,
+      confirmedPassword: this.form.get('confirmedPassword').value,
 
-    return this.http
-      .post("http://localhost:8080/api/user/register", obj)
-      .subscribe(response => {
-        console.log(response);
+    }
+
+    return this.http.post('http://localhost:8080/api/user/register', obj).subscribe(
+      (response) => {
         if (response["registred"]) {
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Signup successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
           localStorage.setItem("token", ` ${response["token"]}`);
           this.setToken();
           this.router.navigate([""]);
         } else {
-          alert("Email Or Password are wrong");
-          this.router.navigate(["signup"]);
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'Signup failed',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this.router.navigate(["login"]);
         }
-      });
+      })
   }
+
 
   setToken() {
     setTimeout(() => {

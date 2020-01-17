@@ -16,13 +16,8 @@
         {{ item.price }}
       </mdb-card-text>
 
-      <a
-        mdbBtn
-        color="primary"
-        mdbWavesEffect
-        (click)="moreInfo(item._id)"
-        routerLink="/store/{{ this.href[0] }}/{{ this.href[1] }}/productDetails"
-        >More info
+      <a mdbBtn color="primary" mdbWavesEffect (click)="moreInfo(item._id)"
+        routerLink="/store/{{ this.href[0] }}/{{ this.href[1] }}/productDetails">More info
       </a>
     </mdb-card-body>
   </mdb-card>

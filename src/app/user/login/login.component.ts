@@ -1,6 +1,7 @@
 import { Component, OnInit, ContentChildren } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import Swal from 'sweetalert2'
 import { Router } from "@angular/router";
 import { HttpService } from "./../../http.service";
 
@@ -40,11 +41,28 @@ export class LoginComponent implements OnInit {
       .post("http://localhost:8080/api/user/login", obj)
       .subscribe(response => {
         if (response) {
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Logged In successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
           localStorage.setItem("token", ` ${response["token"]}`);
           this.router.navigate([""]);
         } else {
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'Email or Password is Incorrect',
+            showConfirmButton: false,
+            timer: 1500
+          })
           alert("Email Or Password are wrong");
           this.router.navigate(["login"]);
+
+
+
         }
       });
   }
