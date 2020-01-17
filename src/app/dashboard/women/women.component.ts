@@ -9,7 +9,7 @@ import { VariablesService } from "./../../variables.service";
   styleUrls: ["./women.component.scss"]
 })
 export class WomenComponent implements OnInit {
-  womenProducts: any = [];
+  womenProducts: any;
 
   constructor(private http: HttpClient, private variable: VariablesService) {}
 
