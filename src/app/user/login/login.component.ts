@@ -48,8 +48,8 @@ export class LoginComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
-          localStorage.setItem("token", ` ${response["token"]}`)
-          this.router.navigate([''])
+          localStorage.setItem("token", ` ${response["token"]}`);
+          this.router.navigate([""]);
         } else {
           Swal.fire({
             position: 'top',
@@ -58,6 +58,11 @@ export class LoginComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          alert("Email Or Password are wrong");
+          this.router.navigate(["login"]);
+
+
+
         }
       });
   }
@@ -66,7 +71,6 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.token = localStorage.getItem("token");
       this._http.Token = this.token;
-      this.router.navigate([""]);
     }, 500);
   }
 }
