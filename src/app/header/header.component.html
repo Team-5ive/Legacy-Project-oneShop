@@ -1,9 +1,3 @@
-<!-- <div>
-    <p>Team 5ive</p>
-
-
-
-</div> -->
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
 <header>
@@ -17,11 +11,22 @@
 
     <nav>
       <ul>
-        <li>
+        <li [hidden]="token">
           <a href="#" routerLink="/login">
         <li class="fas fa-user-alt"></li>
         </a>
         </li>
+        <li [hidden]="!token" (click)="logout()">
+            <a href="#" routerLink="/login" >
+              logout
+            </a>
+          </li>
+
+
+                                      
+                  <!-- <ng-template #elseBlock>Content to render when value is null.</ng-template> -->
+
+        
         <li>
           <a href="#" routerLink="/cart">
             <i class="fas fa-cart-arrow-down"></i>
