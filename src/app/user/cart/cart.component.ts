@@ -16,8 +16,8 @@ export class CartComponent implements OnInit {
     this._http.getMenProduct().subscribe(data => {this.men = data
       console.log(this.men)
       return this.men})
-
-///////
+      
+      ///////
   }
 
   
