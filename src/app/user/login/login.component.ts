@@ -41,8 +41,10 @@ export class LoginComponent implements OnInit {
       .subscribe(response => {
         if (response) {
           localStorage.setItem("token", ` ${response["token"]}`);
+          this.router.navigate([""]);
         } else {
           alert("Email Or Password are wrong");
+          this.router.navigate(["login"]);
         }
       });
   }
@@ -51,7 +53,6 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.token = localStorage.getItem("token");
       this._http.Token = this.token;
-      this.router.navigate([""]);
     }, 500);
   }
 }
