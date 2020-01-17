@@ -21,7 +21,7 @@ export class VariablesService {
   updateProductId(id: string) {
     this.productId = id;
   }
-  getProductId(id: string) {
+  getProductId() {
     return this.productId;
   }
 }

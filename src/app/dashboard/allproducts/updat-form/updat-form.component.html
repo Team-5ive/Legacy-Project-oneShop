@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()">
+<form [formGroup]="form" (ngSubmit)="submitUpdate()">
   <div class="form-group">
     <label for="formGroupExampleInput">Product Name</label>
     <input
@@ -41,57 +41,6 @@
       id="formGroupExampleInput3"
       placeholder="Product Image Link"
     />
-  </div>
-
-  <div class="form-group col-md-12">
-    <label for="inputState">Catagorty</label>
-    <select
-      formControlName="ProductCatagory"
-      id="inputState"
-      class="form-control"
-    >
-      <option selected disabled>Choose...</option>
-      <option>Men</option>
-      <option>Women</option>
-    </select>
-  </div>
-
-  <div class="form-group col-md-12">
-    <label for="inputState">Brand</label>
-    <select formControlName="ProductBrand" id="inputState" class="form-control">
-      <option selected disabled>Choose...</option>
-      <option>brand1</option>
-      <option>brand2</option>
-      <option>brand3</option>
-      <option>brand4</option>
-      <option>brand5</option>
-    </select>
-  </div>
-
-  <div class="form-group col-md-12">
-    <label for="inputState">Tag</label>
-    <select formControlName="ProductTag" id="inputState" class="form-control">
-      <option selected disabled>Choose...</option>
-      <option>tops</option>
-      <option>jeans</option>
-      <option>jackets</option>
-      <option>shoes</option>
-      <option>t-shirts</option>
-      <option>outerwear</option>
-    </select>
-  </div>
-
-  <div class="form-group col-md-12">
-    <label for="inputState">Color</label>
-    <select formControlName="ProductColor" id="inputState" class="form-control">
-      <option selected disabled>Choose...</option>
-      <option>white</option>
-      <option>red</option>
-      <option>green</option>
-      <option>blue</option>
-      <option>orange</option>
-      <option>black</option>
-    </select>
   </div>
 
   <button type="submit" class="btn btn-primary">Add Product</button>
