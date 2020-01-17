@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2'
 
 
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',

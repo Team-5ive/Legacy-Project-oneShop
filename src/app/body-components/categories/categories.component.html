@@ -1,7 +1,7 @@
 <!-- Expected to get a gender specification from the home component
 To refactore this
 -->
-<div *ngIf="this.href === '/store/men'; then men; else women"></div>
+<div *ngIf="this.href === '/store/men'; then men; else women" class="all"></div>
 <ng-template #men>
   <h1>All {{ categories.men.gender }}</h1>
   <div class="container" *ngFor="let item of categories.men.tags">
@@ -9,10 +9,7 @@ To refactore this
       <div class="con">
         <div class="view rgba-white-slight waves-light" mdbWavesEffect>
           <a href="#" routerLink="/store/men/{{ item.tagName.toLowerCase() }}">
-            <mdb-card-img
-              src="{{ item.tagImage }}"
-              alt="Card image cap"
-            ></mdb-card-img>
+            <mdb-card-img src="{{ item.tagImage }}" alt="Card image cap"></mdb-card-img>
             <mdb-card-title>
               <h4>{{ item.tagName }}</h4>
             </mdb-card-title>
@@ -29,14 +26,8 @@ To refactore this
     <mdb-card>
       <div class="con">
         <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-          <a
-            href="#"
-            routerLink="/store/women/{{ item.tagName.toLowerCase() }}"
-          >
-            <mdb-card-img
-              src="{{ item.tagImage }}"
-              alt="Card image cap"
-            ></mdb-card-img>
+          <a href="#" routerLink="/store/women/{{ item.tagName.toLowerCase() }}">
+            <mdb-card-img src="{{ item.tagImage }}" alt="Card image cap"></mdb-card-img>
             <mdb-card-title>
               <h4>{{ item.tagName }}</h4>
             </mdb-card-title>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import {Router} from "@angular/router"
-
-import {HeaderComponent} from '../../header/header.component'
+import { Router } from "@angular/router"
+import Swal from 'sweetalert2'
+// import {HeaderComponent} from '../../header/header.component'
 
 @Component({
   selector: "app-login",
@@ -12,17 +12,17 @@ import {HeaderComponent} from '../../header/header.component'
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  constructor(public user: FormBuilder, private http: HttpClient, private router: Router, private header: HeaderComponent) {
+  constructor(public user: FormBuilder, private http: HttpClient, private router: Router) {
     this.form = this.user.group({
       email: [""],
       password: [""]
     });
   }
-  token:string = ''
+  token: string = ''
   ngOnInit() {
 
   }
-  
+
   submitForm() {
     var obj = {
       email: this.form.get("email").value,
@@ -33,18 +33,31 @@ export class LoginComponent implements OnInit {
       .post("http://localhost:8080/api/user/login", obj)
       .subscribe(response => {
         if (response) {
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Logged In successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
           localStorage.setItem("token", ` ${response["token"]}`)
           this.router.navigate([''])
         } else {
-          alert("Email Or Password are wrong");
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'Email or Password is Incorrect',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
       });
   }
-  
-   setToken() {
-     setTimeout(() => {
-      this.token =  localStorage.getItem('token')
-      this.header.getIt(this.token)
+
+  setToken() {
+    setTimeout(() => {
+      this.token = localStorage.getItem('token')
+      // this.header.getIt(this.token)
       // console.log(this.token)
     }, 500);
 

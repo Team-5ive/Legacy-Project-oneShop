@@ -12,7 +12,7 @@ import { MenComponent } from "./dashboard/men/men.component";
 import { WomenComponent } from "./dashboard/women/women.component";
 import { AddProductComponent } from "./dashboard/add-product/add-product.component";
 
-
+import { SignUpComponent } from "./user/sign-up/sign-up.component"
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 
@@ -30,12 +30,13 @@ const routes: Routes = [
   },
 
 
-  
-  
+
+
 
 
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
+  { path: "signup", component: SignUpComponent },
   { path: "cart", component: CartComponent },
   { path: "store/men", component: CategoriesComponent },
   { path: "store/women", component: CategoriesComponent },
@@ -105,7 +106,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 // add here your component route  so you can add them in app.moudel (for best practice)
 export const routingComponents = [
   HomeComponent,
