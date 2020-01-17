@@ -90,6 +90,10 @@ const routes: Routes = [
   {
     path: "store/women/jeans/productDetails",
     component: ProductDetailsComponent
+  },
+  {
+    path: "**",
+    redirectTo: "login"
   }
 ];
 
