@@ -42,14 +42,6 @@ export class AllproductsComponent implements OnInit {
           .subscribe(data => {
             console.log(data);
             if (data["success"]) {
-              // Swal.fire({
-              //   position: "top",
-              //   icon: "success",
-              //   title: "Logged In successfully",
-              //   showConfirmButton: false,
-              //   timer: 1500
-              // });
-
               this.ngOnInit();
             }
           });

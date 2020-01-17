@@ -55,6 +55,7 @@ export class AddProductComponent implements OnInit {
       .post("http://localhost:8080/api/add/product", obj)
       .subscribe(
         response => {
+          console.log(response);
           Swal.fire({
             position: "top",
             icon: "success",
