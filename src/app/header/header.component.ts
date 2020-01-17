@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { HttpService } from "./../http.service";
-import { VariablesService } from "../variables.service";
 
 @Component({
   selector: "app-header",
@@ -9,28 +8,25 @@ import { VariablesService } from "../variables.service";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  token: string;
-  constructor(
-    private router: Router,
-    private _http: HttpService,
-    private variable: VariablesService
-  ) {}
+  constructor(private router: Router, private _http: HttpService) {}
   logout() {
     localStorage.clear();
     this.token = "";
+    this._http.Token = "";
   }
-  // getIt(t: string) {
-  //   this.token = t;
-  //   console.log(this.token);
-  // }
+
+  token: string = "";
+
   ngOnInit() {
+    var that = this;
+
+    var inter = setInterval(function() {
+      that.token = that._http.Token;
+      if (that.token) {
+        clearInterval(inter);
+        that.ngOnInit();
+      }
+    }, 3000);
     localStorage.clear();
-    // setTimeout(() => {
-    this.token = this.variable.Token;
-    // console.log(this.token);
-    // }, 1000);
-  }
-  invoked(t: string) {
-    this.token = t;
   }
 }

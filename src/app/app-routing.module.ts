@@ -92,8 +92,8 @@ const routes: Routes = [
     path: "store/women/jeans/productDetails",
     component: ProductDetailsComponent
   },
-  { path: "signup", component: SignUpComponent }
-  // { path: "**", redirectTo: "login" }
+  { path: "signup", component: SignUpComponent },
+  { path: "**", redirectTo: "login" }
 ];
 
 @NgModule({
