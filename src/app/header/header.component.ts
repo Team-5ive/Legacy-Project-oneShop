@@ -27,7 +27,5 @@ export class HeaderComponent implements OnInit {
         that.ngOnInit();
       }
     }, 3000);
-    console.log("!!!!!!!!!!")
-    
   }
 }
