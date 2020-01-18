@@ -1,24 +1,15 @@
-<h1>Check our all our {{ this.href[1] }}</h1>
-<div class="container" *ngFor="let item of lists">
-  <mdb-card>
-    <div class="view rgba-white-slight waves-light image" mdbWavesEffect>
-      <mdb-card-img src="{{ item.image }}" alt="Card image cap"></mdb-card-img>
-      <a>
-        <div class="mask"></div>
-      </a>
-    </div>
-    <mdb-card-body>
-      <mdb-card-title>
-        <h4>{{ item.title }}</h4>
-      </mdb-card-title>
-
-      <mdb-card-text>
-        {{ item.price }}
-      </mdb-card-text>
-
-      <a mdbBtn color="primary" mdbWavesEffect (click)="moreInfo(item._id)"
+<div class="container-fluid">
+  <h1>Check out all our {{ this.href[1] }}</h1>
+  <div class="row" style="justify-content: center;"  >
+    <div class="card m-3" style="width: 18rem;" *ngFor="let item of lists" style="justify-content: center;" >
+      <img src="{{ item.image }}" class="card-img-top m-1" alt="..." style="width: 200px;height: 200px;">
+      <div class="card-body">
+        <h5 class="card-title">{{item.title }}</h5>
+        <p class="card-text">Price :{{ item.price }}$</p>
+        <a  color="primary" class="btn btn-primary" (click)="moreInfo(item._id)"
         routerLink="/store/{{ this.href[0] }}/{{ this.href[1] }}/productDetails">More info
       </a>
-    </mdb-card-body>
-  </mdb-card>
+      </div>
+    </div>
+  </div>
 </div>

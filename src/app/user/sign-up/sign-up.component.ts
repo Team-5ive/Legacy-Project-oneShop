@@ -28,7 +28,7 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   submitForm() {
     var obj = {
@@ -50,6 +50,7 @@ export class SignUpComponent implements OnInit {
             timer: 1500
           });
           localStorage.setItem("token", ` ${response["token"]}`);
+          localStorage.setItem("username", ` ${response["username"]}`)
           this.setToken();
           this.router.navigate([""]);
         } else {

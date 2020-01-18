@@ -14,6 +14,7 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { SignUpComponent } from "./user/sign-up/sign-up.component";
 import { UpdatFormComponent } from "./dashboard/allproducts/updat-form/updat-form.component";
+import { CheckoutComponent } from './user/checkout/checkout.component'
 
 const routes: Routes = [
   {
@@ -52,9 +53,12 @@ const routes: Routes = [
     path: "store/women",
     component: ProductListComponent,
     children: [
+      { path: "shoes", component: ProductListComponent },
+      { path: "tops", component: ProductListComponent },
       { path: "jackets", component: ProductListComponent },
       { path: "outerwear", component: ProductListComponent },
-      { path: "jeans", component: ProductListComponent }
+      { path: "jeans", component: ProductListComponent },
+      { path: "t-shirts", component: ProductListComponent }
     ]
   },
 
@@ -93,6 +97,7 @@ const routes: Routes = [
     component: ProductDetailsComponent
   },
   { path: "signup", component: SignUpComponent },
+  { path: "checkout", component: CheckoutComponent },
   { path: "**", redirectTo: "login" }
 ];
 

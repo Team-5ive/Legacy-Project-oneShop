@@ -33,8 +33,18 @@ export class CartComponent implements OnInit {
 
   hide(id: number) {
     this.toShow.splice(id, 1)
+    this.variable.sum -= this.toShow[id].price
     this.ngOnInit()
 
+  }
+
+  clicked() {
+    if (localStorage.getItem('token')) {
+      this.router.navigate(["checkout"]);
+
+    } else {
+      this.router.navigate(["login"]);
+    }
   }
 
 }
