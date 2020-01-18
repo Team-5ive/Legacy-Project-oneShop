@@ -8,20 +8,30 @@ import { HttpService } from "./../http.service";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router, private _http: HttpService) { }
+  constructor(private router: Router, private _http: HttpService) {}
   logout() {
     localStorage.clear();
     this.token = "";
     this._http.Token = "";
+    this.type = false;
+    this._http.Type = "";
   }
 
   token: string = "";
+  type: boolean = false;
+  Admin: string = "Admin";
 
   ngOnInit() {
     var that = this;
+    console.log(
+      typeof that._http.Type,
+      "Admin",
+      that._http.Type === that.Admin
+    );
 
-    var inter = setInterval(function () {
+    var inter = setInterval(function() {
       that.token = that._http.Token;
+      that.type = that._http.Type === that.Admin;
       if (that.token) {
         clearInterval(inter);
         that.ngOnInit();

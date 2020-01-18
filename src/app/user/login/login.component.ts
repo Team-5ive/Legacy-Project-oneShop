@@ -15,6 +15,8 @@ import { HttpService } from "./../../http.service";
 export class LoginComponent implements OnInit {
   // @ContentChildren(HeaderComponent)
   form: FormGroup;
+  token: string = "";
+  type: string = "";
   constructor(
     public user: FormBuilder,
     private http: HttpClient,
@@ -26,7 +28,6 @@ export class LoginComponent implements OnInit {
       password: [""]
     });
   }
-  token: string = "";
 
   ngOnInit() {}
 
@@ -48,13 +49,14 @@ export class LoginComponent implements OnInit {
             timer: 1500
           });
           localStorage.setItem("token", ` ${response["token"]}`);
-          if (response["userType"] != "Customer") {
+          localStorage.setItem("type", ` ${response["userType"]}`);
+          console.log(response);
+          if (response["userType"] !== "Customer") {
             this.router.navigate(["dashboard"]);
-            this.setToken()
+            this.setToken();
           } else {
             this.router.navigate([""]);
           }
-
         } else {
           Swal.fire({
             position: "top",
@@ -71,7 +73,10 @@ export class LoginComponent implements OnInit {
   setToken() {
     setTimeout(() => {
       this.token = localStorage.getItem("token");
+      this.type = localStorage.getItem("type");
       this._http.Token = this.token;
-    }, 500);
+      this._http.Type = this.type;
+      console.log(this._http.Type);
+    }, 700);
   }
 }

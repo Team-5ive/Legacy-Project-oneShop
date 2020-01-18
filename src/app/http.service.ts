@@ -13,6 +13,8 @@ export class HttpService {
   };
 
   Token: string = "";
+  Type: string = "";
+
   constructor(private http: HttpClient) {}
 
   getProducts(id: String) {
