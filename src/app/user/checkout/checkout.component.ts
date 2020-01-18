@@ -56,7 +56,7 @@ export class CheckoutComponent {
     public checkout: FormBuilder,
     private http: HttpClient,
     private variable: VariablesService,
-    private
+    private router: Router
   ) {
     this.form = this.checkout.group({
       phone: [""], //
@@ -111,7 +111,7 @@ export class CheckoutComponent {
     return this.http
       .post("http://localhost:8080/api/add/orders", this.obj)
       .subscribe(response => {
-        this.router.nav;
+        this.router.navigate(["checkout/recipt"]);
       });
   }
 

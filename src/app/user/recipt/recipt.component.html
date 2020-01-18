@@ -15,7 +15,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <span>Payment No.</span>
-                <!-- <strong>{{ this.userInfo.userId }}</strong> -->
+                <strong>{{ this.variable.userInfo.userId }}</strong>
               </div>
               <div class="col-sm-6 text-right">
                 <span>Payment Date</span>
@@ -29,13 +29,13 @@
               <div class="col-sm-6">
                 <span>Client</span>
                 <strong>
-                  {{ this.obj.street1 }}
+                  {{ this.obj.delivery_info.street1 }}
                 </strong>
                 <p>
-                  {{ this.obj.street1 }} <br />
-                  {{ this.obj.city }} <br />
+                  {{ this.obj.delivery_info.street1 }} <br />
+                  {{ this.obj.delivery_info.city }} <br />
 
-                  {{ this.obj.country }} <br />
+                  {{ this.obj.delivery_info.country }} <br />
                 </p>
               </div>
               <div class="col-sm-6 text-right">
@@ -44,9 +44,9 @@
                   {{ this.variable.userInfo.username }}
                 </strong>
                 <p>
-                  {{ this.obj.street2 }} <br />
-                  {{ this.obj.city }} <br />
-                  {{ this.obj.country }} <br />
+                  {{ this.obj.delivery_info.street2 }} <br />
+                  {{ this.obj.delivery_info.city }} <br />
+                  {{ this.obj.delivery_info.country }} <br />
                 </p>
               </div>
             </div>

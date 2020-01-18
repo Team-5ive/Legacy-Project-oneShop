@@ -12,5 +12,6 @@ export class ReciptComponent implements OnInit {
 
   ngOnInit() {
     this.obj = JSON.parse(this.variable.checkoutInfo);
+    console.log(this.obj);
   }
 }
