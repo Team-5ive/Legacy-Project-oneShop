@@ -4,10 +4,11 @@ import { VariablesService } from '../../variables.service'
 import Swal from 'sweetalert2'
 import { Router } from "@angular/router";
 
+
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  selector: "app-cart",
+  templateUrl: "./cart.component.html",
+  styleUrls: ["./cart.component.scss"]
 })
 export class CartComponent implements OnInit {
   toShow = []
@@ -33,6 +34,7 @@ export class CartComponent implements OnInit {
   hide(id: number) {
     this.toShow.splice(id, 1)
     this.ngOnInit()
+
   }
 
 }

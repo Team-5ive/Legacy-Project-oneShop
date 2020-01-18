@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../../http.service";
 import { VariablesService } from "../../variables.service";
+
 import Swal from 'sweetalert2'
 
 
@@ -23,6 +24,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCart() {
+
     this.variable.addItem(this.product)
 
     const Toast = Swal.mixin({
@@ -41,6 +43,7 @@ export class ProductDetailsComponent implements OnInit {
       icon: 'success',
       title: 'Adding To Cart'
     })
+
 
   }
 }

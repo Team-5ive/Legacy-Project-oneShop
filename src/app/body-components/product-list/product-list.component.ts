@@ -20,6 +20,7 @@ export class ProductListComponent implements OnInit {
   @Input() public Id: string = "";
   ngOnInit() {
     this.array = this.router.url.split("/");
+    console.log(this.array);
     this.array.splice(0, 2);
     this.href = this.array;
     this.http
@@ -28,6 +29,7 @@ export class ProductListComponent implements OnInit {
       )
       .subscribe(data => {
         this.lists = data;
+        // console.log(this.lists, `${this.href[0]}/${this.href[1]}`);
       });
   }
   moreInfo(id: string) {

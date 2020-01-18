@@ -5,25 +5,32 @@ To refactore this
 <ng-template #men>
 
   <div class="m-3 ">
-    <h1>All {{ categories.men.gender }} Products </h1>
+    <h1>All {{ categories.men.gender }} Products</h1>
     <div class="card-deck row">
       <mdb-card class="col" *ngFor="let item of categories.men.tags">
         <a href="#" routerLink="/store/men/{{ item.tagName.toLowerCase() }}">
           <div class=" row view overlay waves-light  pl-1 pt-1 ">
-            <img src="{{item.tagImage}}" alt="Card image cap" style=" width: 200px;height:300px;">
+
+            <img
+              src="{{ item.tagImage }}"
+              alt="Card image cap"
+              style=" width: 200px;height:300px;"
+            />
+
           </div>
           <div class=" row mt-3">
             <mdb-card-body>
               <mdb-card-title style="text-align: center;">
+
                 <strong>
                   <h5>{{ item.tagName }}</h5>
                 </strong>
+
               </mdb-card-title>
             </mdb-card-body>
           </div>
         </a>
       </mdb-card>
-
     </div>
   </div>
 </ng-template>
@@ -31,12 +38,21 @@ To refactore this
 <ng-template #women>
 
   <div class="m-3 ">
+
     <h1>All {{ categories.women.gender }} Products </h1>
+
+
     <div class="card-deck row">
       <mdb-card class="col" *ngFor="let item of categories.women.tags">
         <a href="#" routerLink="/store/women/{{ item.tagName.toLowerCase() }}">
           <div class=" row view overlay waves-light  pl-1 pt-1 ">
-            <img src="{{item.tagImage}}" alt="Card image cap" style=" width: 200px;height:300px;">
+
+            <img
+              src="{{ item.tagImage }}"
+              alt="Card image cap"
+              style=" width: 200px;height:300px;"
+            />
+
           </div>
           <div class=" row mt-3">
             <mdb-card-body>
@@ -50,3 +66,4 @@ To refactore this
     </div>
   </div>
 </ng-template>
+
