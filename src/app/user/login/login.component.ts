@@ -1,7 +1,7 @@
 import { Component, OnInit, ContentChildren } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import { Router } from "@angular/router";
 import { HttpService } from "./../../http.service";
 
@@ -27,10 +27,8 @@ export class LoginComponent implements OnInit {
     });
   }
   token: string = "";
-  ngOnInit() {
-    console.log(this.token + "sas", this._http.Token);
-    
-  }
+
+  ngOnInit() {}
 
   submitForm() {
     var obj = {
@@ -43,33 +41,30 @@ export class LoginComponent implements OnInit {
       .subscribe(response => {
         if (response) {
           Swal.fire({
-            position: 'top',
-            icon: 'success',
-            title: 'Logged In successfully',
+            position: "top",
+            icon: "success",
+            title: "Logged In successfully",
             showConfirmButton: false,
             timer: 1500
-          })
+          });
           localStorage.setItem("token", ` ${response["token"]}`);
-          console.log(response)
+          console.log(response);
           if (response["userType"] != "Customer") {
             this.router.navigate(["dashboard"]);
-            this.setToken()
+            this.setToken();
           } else {
             this.router.navigate([""]);
           }
-
         } else {
           Swal.fire({
-            position: 'top',
-            icon: 'error',
-            title: 'Email or Password is Incorrect',
+            position: "top",
+            icon: "error",
+            title: "Email or Password is Incorrect",
             showConfirmButton: false,
             timer: 1500
-          })
+          });
+
           this.router.navigate(["login"]);
-
-
-
         }
       });
   }

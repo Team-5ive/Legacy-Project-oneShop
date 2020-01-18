@@ -1,0 +1,47 @@
+<form [formGroup]="form" (ngSubmit)="submitUpdate()">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Product Name</label>
+    <input
+      formControlName="ProductName"
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput"
+      placeholder="Product Name"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Product Price</label>
+    <input
+      formControlName="ProductPrice"
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput2"
+      placeholder="Product Price"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput3">Product Description</label>
+    <input
+      formControlName="ProductDescription"
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput3"
+      placeholder="Product Description"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput3">Product Image</label>
+    <input
+      formControlName="ProductImage"
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput3"
+      placeholder="Product Image Link"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update Product</button>
+</form>

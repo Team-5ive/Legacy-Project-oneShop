@@ -4,5 +4,10 @@
 }
 
 .container {
+  display: inline-block;
+  justify-content: space-between;
   padding: 25px;
+}
+button {
+  margin: 25px;
 }

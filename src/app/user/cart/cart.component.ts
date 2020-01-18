@@ -1,27 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from "../../http.service"
-import { VariablesService } from '../../variables.service'
-import * as $ from 'jquery';
+import { Component, OnInit } from "@angular/core";
+import { HttpService } from "../../http.service";
+import { VariablesService } from "../../variables.service";
+import * as $ from "jquery";
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  selector: "app-cart",
+  templateUrl: "./cart.component.html",
+  styleUrls: ["./cart.component.scss"]
 })
 export class CartComponent implements OnInit {
+  constructor(private _http: HttpService, private variable: VariablesService) {}
 
-  constructor(private _http: HttpService, private variable: VariablesService) { }
-
-  men = {}
+  men = {};
 
   ngOnInit() {
-
-
-    console.log(this.variable.getItems())
-    var toShow = this.variable.getItems()
+    console.log(this.variable.getItems());
+    var toShow = this.variable.getItems();
 
     for (var i = 0; i < toShow.length; i++) {
-
-
       $("tbody").append(`<tr>
       <th scope="row">
           <img style="width:50%;height:50%;" src="${toShow[i]["image"]}" alt=""
@@ -48,18 +43,11 @@ export class CartComponent implements OnInit {
               data-placement="top" title="Remove item">X
           </button>
       </td>
-  </tr>`)
-
+  </tr>`);
     }
-
   }
 
   template(image) {
-    return `<th scope="row"> <img src="${image}" alt=""  class="img-fluid z-depth-0"></th>`
+    return `<th scope="row"> <img src="${image}" alt=""  class="img-fluid z-depth-0"></th>`;
   }
-
-
-
-
 }
-

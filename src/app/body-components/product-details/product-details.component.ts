@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../../http.service";
 import { VariablesService } from "../../variables.service";
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
 
 @Component({
   selector: "app-product-details",
@@ -13,7 +12,7 @@ export class ProductDetailsComponent implements OnInit {
   product = {};
   Id: String = "";
 
-  constructor(private _http: HttpService, private variable: VariablesService) { }
+  constructor(private _http: HttpService, private variable: VariablesService) {}
 
   ngOnInit() {
     this.Id = this.variable.Id;
@@ -23,24 +22,23 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addToCart() {
-    this.variable.addItem(this.product)
+    this.variable.addItem(this.product);
 
     const Toast = Swal.mixin({
       toast: true,
-      position: 'top-end',
+      position: "top-end",
       showConfirmButton: false,
       timer: 2000,
       timerProgressBar: true,
-      onOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      onOpen: toast => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
       }
-    })
+    });
 
     Toast.fire({
-      icon: 'success',
-      title: 'Adding To Cart'
-    })
-
+      icon: "success",
+      title: "Adding To Cart"
+    });
   }
 }

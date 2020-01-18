@@ -8,7 +8,7 @@ import { HttpService } from "./../http.service";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router, private _http: HttpService) { }
+  constructor(private router: Router, private _http: HttpService) {}
   logout() {
     localStorage.clear();
     this.token = "";
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     var that = this;
 
-    var inter = setInterval(function () {
+    var inter = setInterval(function() {
       that.token = that._http.Token;
       if (that.token) {
         clearInterval(inter);

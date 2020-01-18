@@ -13,6 +13,7 @@ import { AddProductComponent } from "./dashboard/add-product/add-product.compone
 import { ProductListComponent } from "./body-components/product-list/product-list.component";
 import { ProductDetailsComponent } from "./body-components/product-details/product-details.component";
 import { SignUpComponent } from "./user/sign-up/sign-up.component";
+import { UpdatFormComponent } from "./dashboard/allproducts/updat-form/updat-form.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: "men", component: MenComponent },
       { path: "women", component: WomenComponent },
       { path: "orders", component: OrdersComponent },
+      { path: "updateproduct", component: UpdatFormComponent },
       { path: "", component: AddProductComponent }
     ]
   },
@@ -101,7 +103,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 // add here your component route  so you can add them in app.moudel (for best practice)
 export const routingComponents = [
   HomeComponent,
