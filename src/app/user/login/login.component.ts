@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
   token: string = "";
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   submitForm() {
     var obj = {
@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
             timer: 1500
           });
           localStorage.setItem("token", ` ${response["token"]}`);
+          localStorage.setItem("username", ` ${response["username"]}`)
           if (response["userType"] != "Customer") {
             this.router.navigate(["dashboard"]);
             this.setToken()

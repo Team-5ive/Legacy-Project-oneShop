@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 export class VariablesService {
   Token: string = "";
   Id: String = "";
-
+  sum: number = 0
   productId: string = "";
   items = [];
 
@@ -35,7 +35,8 @@ export class VariablesService {
 
   addItem(item) {
     this.items.push(item);
-    console.log(this.items);
+    this.sum += item.price
+    console.log(this.sum, this.items);
 
   }
 }

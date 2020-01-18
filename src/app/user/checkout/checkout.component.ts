@@ -1,43 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
-
-// @Component({
-//   selector: 'app-checkout',
-//   templateUrl: './checkout.component.html',
-//   styleUrls: ['./checkout.component.scss']
-// })
-// export class CheckoutComponent implements OnInit {
-//   form: FormGroup;
-//   constructor(public user: FormBuilder) { 
-//     this.form = this.user.group({
-//       adress: [""],
-//       phone: [""],
-//       adress2: [""]
-//     });
-//   }
-
-//   submitForm() {
-//     var obj = {
-//       adress: this.form.get("adress").value,
-//       phone: this.form.get("phone").value,
-//       adress2: this.form.get("adress2").value
-//     };
-//     console.log(obj)
-//     // return this.http
-//     //   .post("http://localhost:8080/api/user/login", obj)
-//     //   .subscribe(response => {
-//     //     if (response) {
-//     //       localStorage.setItem("token", ` ${response["token"]}`)
-//     //       // this.router.navigate([''])
-//     //     } else {
-//     //       alert("Email Or Password are wrong");
-//     //     }
-//     //   });
-//   }
-
-
-
+import { VariablesService } from './../../variables.service'
+import * as moment from 'moment';
 
 
 @Component({
@@ -45,50 +10,40 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss']
 })
-export class CheckoutComponent  {
-  
+export class CheckoutComponent {
+  username: string = localStorage.username
+  now = moment().format('LLLL');
   form: FormGroup;
-  constructor(public checkout: FormBuilder, private http: HttpClient){
+  constructor(public checkout: FormBuilder, private http: HttpClient, private variable: VariablesService) {
+
     this.form = this.checkout.group({
-            
-      phone:[""],
-      adress:[""],
-      adress2:[""],
-      country:[""],
-      city:[""],
-      zip:[""],
-      creditCard:[""],
-      expiration:[""],
-      cvv:[""],
-   })
+      firstName: [""],
+      phone: [""],
+      adress: [""],
+      adress2: [""],
+      country: [""],
+      city: [""],
+      zip: [""],
+      creditCard: [""],
+      expiration: [""],
+      cvv: [""],
+    })
   }
 
-  // userId,
-  //   delivery_info,
-  //   products,
-  //   payment_method,
-  //   total_order_price
-  
-  // "delivery_info": {
-  //   "street1": "2134asd",
-  //   "street2": "asdfa",
-  //   "city": "Ghazela",
-  //   "zip": 2341,
-  //   "country": "United States",
-  //   "phone_number": 2341234
-  // },
 
   submitForm() {
+
+    alert(this.form.get("firstName").value)
 
     var delivery_info = {
       street1: this.form.get("adress").value,
       street2: this.form.get("adress2").value,
-      
+
       phone_number: this.form.get("phone").value,
       country: this.form.get("country").value,
       zip: this.form.get("zip").value,
       city: this.form.get("city").value
-      
+
 
     }
 
@@ -100,7 +55,7 @@ export class CheckoutComponent  {
     }
 
     var obj = {
-            
+
       card_info,
       delivery_info,
       payment_method: this.form.get("creditCard").value,
