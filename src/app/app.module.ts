@@ -26,6 +26,8 @@ import { AllproductsComponent } from "./dashboard/allproducts/allproducts.compon
 import { OrdersComponent } from "./dashboard/orders/orders.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

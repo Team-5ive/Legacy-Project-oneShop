@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   token: string = "";
   ngOnInit() {
     console.log(this.token + "sas", this._http.Token);
+    
   }
 
   submitForm() {
@@ -41,6 +42,7 @@ export class LoginComponent implements OnInit {
       .post("http://localhost:8080/api/user/login", obj)
       .subscribe(response => {
         if (response) {
+
           Swal.fire({
             position: 'top',
             icon: 'success',
@@ -65,7 +67,11 @@ export class LoginComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+
           this.router.navigate(["login"]);
+
+
+
         }
       });
   }

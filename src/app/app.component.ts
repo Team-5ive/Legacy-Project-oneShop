@@ -12,8 +12,6 @@ export class AppComponent {
   constructor(private _http: HttpService) { }
 
   ngOnInit() {
-    // localStorage.getItem("cart");
     localStorage.clear();
-    localStorage.setItem("cart", "[]");
   }
 }

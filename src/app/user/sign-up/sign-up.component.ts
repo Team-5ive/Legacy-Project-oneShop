@@ -72,6 +72,7 @@ export class SignUpComponent implements OnInit {
     setTimeout(() => {
       this.token = localStorage.getItem("token");
       this._http.Token = this.token;
+      console.log(this.token)
       this.router.navigate([""]);
     }, 500);
   }
