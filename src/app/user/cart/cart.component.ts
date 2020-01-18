@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
 
+
     console.log(this.variable.getItems())
     var toShow = this.variable.getItems()
 
@@ -50,6 +51,7 @@ export class CartComponent implements OnInit {
   </tr>`)
 
     }
+
   }
 
   template(image) {
