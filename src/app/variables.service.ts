@@ -8,6 +8,7 @@ export class VariablesService {
   Token: string = "";
   Id: String = "";
   productId: string = "";
+  items = [];
 
   constructor() // private header: HeaderComponent
   {}
@@ -23,5 +24,14 @@ export class VariablesService {
   }
   getProductId() {
     return this.productId;
+  }
+
+  getItems() {
+    return this.items;
+  }
+
+  addItem(item) {
+    this.items.push(item);
+    console.log(this.items);
   }
 }

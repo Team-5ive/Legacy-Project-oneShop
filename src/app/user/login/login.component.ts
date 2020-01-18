@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     });
   }
   token: string = "";
+
   ngOnInit() {}
 
   submitForm() {
@@ -47,7 +48,13 @@ export class LoginComponent implements OnInit {
             timer: 1500
           });
           localStorage.setItem("token", ` ${response["token"]}`);
-          this.router.navigate([""]);
+          console.log(response);
+          if (response["userType"] != "Customer") {
+            this.router.navigate(["dashboard"]);
+            this.setToken();
+          } else {
+            this.router.navigate([""]);
+          }
         } else {
           Swal.fire({
             position: "top",
