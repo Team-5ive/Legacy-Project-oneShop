@@ -13,6 +13,7 @@ export class CheckoutComponent {
   username: string = localStorage.username;
   now = moment().format("LLLL");
   form: FormGroup;
+  selectedCountry: String = "safdsdf";
   countries = [
     {
       country: "Tunisia",
@@ -38,6 +39,7 @@ export class CheckoutComponent {
       ]
     }
   ];
+  cities: Array<any>;
   productsInfo = [];
   // cities =
   // formControlName
@@ -100,5 +102,11 @@ export class CheckoutComponent {
       .subscribe(response => {
         console.log("done");
       });
+  }
+
+  setCountryName(country: String) {
+    this.cities = this.countries.find(
+      cntry => cntry.country === country
+    ).cities;
   }
 }

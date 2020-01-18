@@ -256,10 +256,14 @@
                   class="custom-select d-block w-100"
                   id="country"
                   formControlName="country"
+                  (change)="setCountryName($event.target.value)"
                   required
                 >
                   <!-- <option value="">Choose...</option> -->
-                  <option *ngFor="let country of countries; let i = index">
+                  <option>
+                    Choose...
+                  </option>
+                  <option #opt *ngFor="let country of countries; let i = index">
                     {{ country.country }}
                   </option>
                   <!-- <option></option> -->
@@ -280,10 +284,9 @@
                   formControlName="city"
                   required
                 >
-                  <option value="">Choose...</option>
-                  <option>Benghazi</option>
-                  <option>Tripoli</option>
-                  <option>Tunis</option>
+                  <option *ngFor="let city of cities; let i = index">{{
+                    city
+                  }}</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid state.
@@ -317,11 +320,10 @@
               <div class="custom-control custom-radio">
                 <input
                   id="credit"
-                  name="paymentMethod"
                   type="radio"
                   class="custom-control-input"
                   formControlName="paymentMethod"
-                  value="paypal"
+                  value="credit"
                   checked
                   required
                 />
@@ -332,11 +334,10 @@
               <div class="custom-control custom-radio">
                 <input
                   id="debit"
-                  name="paymentMethod"
+                  formControlName="paymentMethod"
                   type="radio"
                   class="custom-control-input"
-                  formControlName="paymentMethod"
-                  value="paypal"
+                  value="debit"
                   required
                 />
                 <label class="custom-control-label" for="debit"
@@ -346,7 +347,6 @@
               <div class="custom-control custom-radio">
                 <input
                   id="paypal"
-                  name="paypal"
                   type="radio"
                   formControlName="paymentMethod"
                   class="custom-control-input"
