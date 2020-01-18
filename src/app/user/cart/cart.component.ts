@@ -37,5 +37,14 @@ export class CartComponent implements OnInit {
 
   }
 
+  clicked() {
+    if(localStorage.getItem('token')) {
+      this.router.navigate(["checkout"]);
+
+    } else {
+      this.router.navigate(["login"]);
+    }
+  }
+
 }
 
