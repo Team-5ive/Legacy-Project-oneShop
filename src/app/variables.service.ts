@@ -7,11 +7,13 @@ import { Injectable } from "@angular/core";
 export class VariablesService {
   Token: string = "";
   Id: String = "";
+
   productId: string = "";
   items = [];
 
+
   constructor() // private header: HeaderComponent
-  {}
+  { }
   getVariables(id) {
     this.Id = id;
   }
@@ -19,6 +21,7 @@ export class VariablesService {
     this.Token = token;
     // this.header.invoked(this.Token);
   }
+
   updateProductId(id: string) {
     this.productId = id;
   }
@@ -33,5 +36,6 @@ export class VariablesService {
   addItem(item) {
     this.items.push(item);
     console.log(this.items);
+
   }
 }
