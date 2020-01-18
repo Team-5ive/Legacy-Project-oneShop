@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import Swal from "sweetalert2";
 import { Router } from "@angular/router";
 import { HttpService } from "./../../http.service";
+import { VariablesService } from "./../../variables.service";
 
 // import {HeaderComponent} from '../../header/header.component'
 
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
     public user: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    public _http: HttpService
+    public _http: HttpService,
+    private variable: VariablesService
   ) {
     this.form = this.user.group({
       email: [""],
@@ -50,9 +52,14 @@ export class LoginComponent implements OnInit {
           });
           localStorage.setItem("token", ` ${response["token"]}`);
           localStorage.setItem("type", ` ${response["userType"]}`);
+          console.log(response);
 
           if (response["userType"] !== "Customer") {
             this.router.navigate(["dashboard"]);
+            this.variable.userInfo = {
+              userId: response["userId"],
+              username: response["username"]
+            };
             this.setToken();
           } else {
             this.router.navigate([""]);

@@ -10,6 +10,7 @@ export class VariablesService {
   sum: number = 0;
   productId: string = "";
   items = [];
+  userInfo: Object = {};
 
   products;
 
