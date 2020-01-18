@@ -25,9 +25,8 @@ import { ProductListComponent } from "./body-components/product-list/product-lis
 import { AllproductsComponent } from "./dashboard/allproducts/allproducts.component";
 import { OrdersComponent } from "./dashboard/orders/orders.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
-import { UpdatFormComponent } from './dashboard/allproducts/updat-form/updat-form.component';
-
-
+import { UpdatFormComponent } from "./dashboard/allproducts/updat-form/updat-form.component";
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -54,7 +53,8 @@ import { UpdatFormComponent } from './dashboard/allproducts/updat-form/updat-for
     AllproductsComponent,
     OrdersComponent,
     AddProductComponent,
-    UpdatFormComponent
+    UpdatFormComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

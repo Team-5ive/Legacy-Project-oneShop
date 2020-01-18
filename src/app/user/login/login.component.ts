@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
           });
           localStorage.setItem("token", ` ${response["token"]}`);
           localStorage.setItem("type", ` ${response["userType"]}`);
-          console.log(response);
+
           if (response["userType"] !== "Customer") {
             this.router.navigate(["dashboard"]);
             this.setToken();
@@ -76,7 +76,6 @@ export class LoginComponent implements OnInit {
       this.type = localStorage.getItem("type");
       this._http.Token = this.token;
       this._http.Type = this.type;
-      console.log(this._http.Type);
     }, 700);
   }
 }

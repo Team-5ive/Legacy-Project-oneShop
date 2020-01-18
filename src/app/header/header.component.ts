@@ -19,15 +19,10 @@ export class HeaderComponent implements OnInit {
 
   token: string = "";
   type: boolean = false;
-  Admin: string = "Admin";
+  Admin: string = " Admin";
 
   ngOnInit() {
     var that = this;
-    console.log(
-      typeof that._http.Type,
-      "Admin",
-      that._http.Type === that.Admin
-    );
 
     var inter = setInterval(function() {
       that.token = that._http.Token;

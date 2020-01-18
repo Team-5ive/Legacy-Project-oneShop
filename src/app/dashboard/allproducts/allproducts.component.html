@@ -1,14 +1,21 @@
-
-<div class="container-fluid " >
-  
-  <div class="row justify-content-md-center mt-3 mb-3"  >
+<div class="container-fluid ">
+  <app-side-bar></app-side-bar>
+  <div class="row justify-content-md-center mt-3 mb-3">
     <!-- card -->
-    <div class="card col-sm-3  m-1  shadow "  style="height:30%;width: 20rem;"  *ngFor="let item of allProducts">
+    <div
+      class="card col-sm-3  m-1  shadow "
+      style="height:30%;width: 20rem;"
+      *ngFor="let item of allProducts"
+    >
       <div class="card-body">
         <!-- image -->
         <div class="row mb-3 ">
           <div class="col text-center">
-            <img class="card-img-top "  src="{{ item.image }} " style="width: 150px; height:200px;" />
+            <img
+              class="card-img-top "
+              src="{{ item.image }} "
+              style="width: 150px; height:200px;"
+            />
           </div>
         </div>
         <div class="row mb-3">
@@ -17,25 +24,39 @@
             <p class="mb-0">{{ item.description }}</p>
           </div>
         </div>
-       <div class="row">
-         <div class="col">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>category:</strong>  {{ item.category }}</li>
-            <li class="list-group-item"><strong>brand:</strong>  {{ item.brand }}</li>
-            <li class="list-group-item"><strong>tag:</strong>  {{ item.tag }}</li>
-          </ul>
-         </div>
-       </div>
+        <div class="row">
+          <div class="col">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>category:</strong> {{ item.category }}
+              </li>
+              <li class="list-group-item">
+                <strong>brand:</strong> {{ item.brand }}
+              </li>
+              <li class="list-group-item">
+                <strong>tag:</strong> {{ item.tag }}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="row">
-      
         <div class="card-body text-center">
           <button
             type="button"
             class="btn btn-success"
             (click)="updates(item._id)"
-            routerLink="/dashboard/updateproduct">Update</button>
-          <button type="button" class="btn btn-danger" (click)="delete(item._id)">Delete</button>
+            routerLink="/dashboard/updateproduct"
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="delete(item._id)"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

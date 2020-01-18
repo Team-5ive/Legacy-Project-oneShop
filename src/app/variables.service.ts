@@ -11,9 +11,10 @@ export class VariablesService {
   productId: string = "";
   items = [];
 
+  products;
 
   constructor() // private header: HeaderComponent
-  { }
+  {}
   getVariables(id) {
     this.Id = id;
   }
@@ -35,7 +36,5 @@ export class VariablesService {
 
   addItem(item) {
     this.items.push(item);
-    console.log(this.items);
-
   }
 }
