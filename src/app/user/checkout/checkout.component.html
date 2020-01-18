@@ -1,1 +1,54 @@
-<p>checkout works!</p>
+<form id="f1" [formGroup]="form" (ngSubmit)="submitForm()">
+    <h2>Billing</h2>
+    <h4>phone number</h4>
+    <input class="d2" type="text" formControlName="phone">
+    <h4>adress</h4>
+    <input class="d2" type="text" formControlName="adress">
+    <h4>adress 2</h4>
+    <input class="d2" type="text" formControlName="adress2">
+    <section>
+        <div class="d1">
+            <h3>country</h3>
+            <input type="text" formControlName="country">
+        </div>
+        <div class="d1">
+            <h3>city</h3>
+            <input type="text" formControlName="city">
+        </div>
+        <div class="d1">
+            <h3>zip</h3>
+            <input type="text" formControlName="zip">
+        </div>
+    </section>
+    <h2>Payment</h2>
+    
+    <div class="check">
+        <input type="radio" value="Credit Card" name="creditCard" formControlName="creditCard">
+        <p>Credit Card</p>
+        
+     </div >
+  
+     <div class="check">
+        <input type="radio" value="Cash on delivery" name="creditCard" formControlName="creditCard">
+        <p>Cash on delivery</p>
+        
+     </div>
+
+
+    <h4>Credit card number</h4>
+    <input class="d2" type="text" formControlName="creditCard">
+    <section>
+        <div class="d1">
+            <h3>Expiration</h3>
+            <input type="text" formControlName="expiration">
+        </div>
+        <div class="d1">
+            <h3>CVV</h3>
+            <input type="text" formControlName="cvv">
+        </div>
+    </section>
+    <div class="form-group">
+        <button class="btn btn-danger btn-block btn-lg">pay me</button>
+    </div>
+
+</form>
