@@ -11,7 +11,7 @@ export class VariablesService {
   productId: string = "";
   items = [];
   userInfo: Object = {};
-
+  checkoutInfo;
   products;
 
   constructor() // private header: HeaderComponent

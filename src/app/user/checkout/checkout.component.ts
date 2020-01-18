@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { VariablesService } from "./../../variables.service";
 import * as moment from "moment";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-checkout",
@@ -11,9 +12,9 @@ import * as moment from "moment";
 })
 export class CheckoutComponent {
   username: string = localStorage.username;
+  obj: object;
   now = moment().format("LLLL");
   form: FormGroup;
-  toggle: boolean = false;
   countries = [
     {
       country: "Tunisia",
@@ -54,7 +55,8 @@ export class CheckoutComponent {
   constructor(
     public checkout: FormBuilder,
     private http: HttpClient,
-    private variable: VariablesService
+    private variable: VariablesService,
+    private
   ) {
     this.form = this.checkout.group({
       phone: [""], //
@@ -95,7 +97,7 @@ export class CheckoutComponent {
       card_number: this.form.get("card_number").value
     };
 
-    var obj = {
+    this.obj = {
       card_info,
       delivery_info,
       payment_method: this.form.get("paymentMethod").value,
@@ -104,11 +106,12 @@ export class CheckoutComponent {
       userId: this.variable.userInfo["userId"],
       username: this.variable.userInfo["username"]
     };
-    console.log(obj);
+    this.variable.checkoutInfo = JSON.stringify(this.obj);
+
     return this.http
-      .post("http://localhost:8080/api/add/orders", obj)
+      .post("http://localhost:8080/api/add/orders", this.obj)
       .subscribe(response => {
-        console.log("done");
+        this.router.nav;
       });
   }
 
@@ -116,10 +119,6 @@ export class CheckoutComponent {
     this.cities = this.countries.find(
       cntry => cntry.country === country
     ).cities;
-  }
-
-  toggleRecipt() {
-    this.toggle = !this.toggle;
   }
 
   promCodes(pCode: string) {

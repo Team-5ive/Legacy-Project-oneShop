@@ -27,6 +27,7 @@ import { OrdersComponent } from "./dashboard/orders/orders.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { UpdatFormComponent } from "./dashboard/allproducts/updat-form/updat-form.component";
 import { FilterPipe } from './filter.pipe';
+import { ReciptComponent } from './user/recipt/recipt.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { FilterPipe } from './filter.pipe';
     OrdersComponent,
     AddProductComponent,
     UpdatFormComponent,
-    FilterPipe
+    FilterPipe,
+    ReciptComponent
   ],
   imports: [
     BrowserModule,
