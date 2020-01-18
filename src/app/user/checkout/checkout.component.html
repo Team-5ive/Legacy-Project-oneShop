@@ -1,204 +1,135 @@
-<!-- <form id="f1" [formGroup]="form" (ngSubmit)="submitForm()">
-    <h2>Billing</h2>
-    <h4>phone number</h4>
-    <input class="d2" type="text" formControlName="phone">
-    <h4>adress</h4>
-    <input class="d2" type="text" formControlName="adress">
-    <h4>adress 2</h4>
-    <input class="d2" type="text" formControlName="adress2">
-    <section>
-        <div class="d1">
-            <h3>country</h3>
-            <input type="text" formControlName="country">
-        </div>
-        <div class="d1">
-            <h3>city</h3>
-            <input type="text" formControlName="city">
-        </div>
-        <div class="d1">
-            <h3>zip</h3>
-            <input type="text" formControlName="zip">
-        </div>
-    </section>
-    <h2>Payment</h2>
+<div class="receipt-content" [hidden]="!toggle">
+  <div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="invoice-wrapper">
+          <div class="intro">
+            Hi <strong>{{ this.variable.userInfo.username }}</strong
+            >,
+            <br />
+            This is the receipt for a payment of
+            <strong>${{ this.variable.sum }}</strong> (USD)
+          </div>
 
-    <div class="check">
-        <input type="radio" value="Credit Card" name="creditCard" formControlName="creditCard">
-        <p>Credit Card</p>
-
-    </div>
-
-    <div class="check">
-        <input type="radio" value="Cash on delivery" name="creditCard" formControlName="creditCard">
-        <p>Cash on delivery</p>
-
-    </div>
-
-    //
-
-    <h4>Credit card number</h4>
-    <input class="d2" type="text" formControlName="creditCard">
-    <section>
-        <div class="d1">
-            <h3>Expiration</h3>
-            <input type="text" formControlName="expiration">
-        </div>
-        <div class="d1">
-            <h3>CVV</h3>
-            <input type="text" formControlName="cvv">
-        </div>
-    </section>
-    <div class="form-group">
-        <button class="btn btn-danger btn-block btn-lg">pay me</button>
-    </div>
-
-</form> -->
-
-<!-- hamza code above -->
-
-<!-- 
-<div class="receipt-content">
-    <div class="container bootstrap snippet">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="invoice-wrapper">
-                    <div class="intro">
-                        Hi <strong>{{ username}}</strong>,
-                        <br>
-                        This is the receipt for a payment of <strong>${{this.variable.sum}}</strong> (USD) for your
-                        works
-                    </div>
-
-                    <div class="payment-info">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <span>Payment No.</span>
-                                <strong>434334343</strong>
-                            </div>
-                            <div class="col-sm-6 text-right">
-                                <span>Payment Date</span>
-                                <strong>{{now}}</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="payment-details">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <span>Client</span>
-                                <strong>
-                                    Andres felipe posada
-                                </strong>
-                                <p>
-                                    989 5th Avenue <br>
-                                    City of monterrey <br>
-                                    55839 <br>
-                                    USA <br>
-                                    <a href="#">
-                                        jonnydeff@gmail.com
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="col-sm-6 text-right">
-                                <span>Payment To</span>
-                                <strong>
-                                    Juan fernando arias
-                                </strong>
-                                <p>
-                                    344 9th Avenue <br>
-                                    San Francisco <br>
-                                    99383 <br>
-                                    USA <br>
-                                    <a href="#">
-                                        juanfer@gmail.com
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="line-items">
-                        <div class="headers clearfix">
-                            <div class="row">
-                                <div class="col-xs-4">Description</div>
-                                <div class="col-xs-3">Quantity</div>
-                                <div class="col-xs-5 text-right">Amount</div>
-                            </div>
-                        </div>
-                        <div class="items">
-                            <div class="row item">
-                                <div class="col-xs-4 desc">
-                                    Html theme
-                                </div>
-                                <div class="col-xs-3 qty">
-                                    3
-                                </div>
-                                <div class="col-xs-5 amount text-right">
-                                    $60.00
-                                </div>
-                            </div>
-                            <div class="row item">
-                                <div class="col-xs-4 desc">
-                                    Bootstrap snippet
-                                </div>
-                                <div class="col-xs-3 qty">
-                                    1
-                                </div>
-                                <div class="col-xs-5 amount text-right">
-                                    $20.00
-                                </div>
-                            </div>
-                            <div class="row item">
-                                <div class="col-xs-4 desc">
-                                    Snippets on bootdey
-                                </div>
-                                <div class="col-xs-3 qty">
-                                    2
-                                </div>
-                                <div class="col-xs-5 amount text-right">
-                                    $18.00
-                                </div>
-                            </div>
-                        </div>
-                        <div class="total text-right">
-                            <p class="extra-notes">
-                                <strong>Extra Notes</strong>
-                                Please send all items at the same time to shipping address by next week.
-                                Thanks a lot.
-                            </p>
-                            <div class="field">
-                                Subtotal <span>$379.00</span>
-                            </div>
-                            <div class="field">
-                                Shipping <span>$0.00</span>
-                            </div>
-                            <div class="field">
-                                Discount <span>4.5%</span>
-                            </div>
-                            <div class="field grand-total">
-                                Total <span>$312.00</span>
-                            </div>
-                        </div>
-
-                        <div class="print">
-                            <a href="#">
-                                <i class="fa fa-print"></i>
-                                Print this receipt
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer">
-                    Copyright © 2014. company name
-                </div>
+          <div class="payment-info">
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Payment No.</span>
+                <strong>{{ this.obj.userId }}</strong>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Payment Date</span>
+                <strong>{{ now }}</strong>
+              </div>
             </div>
-        </div>
-    </div>
-</div> -->
+          </div>
 
+          <div class="payment-details">
+            <div class="row">
+              <div class="col-sm-6">
+                <span>Client</span>
+                <strong>
+                  {{ this.obj.street1 }}
+                </strong>
+                <p>
+                  {{ this.obj.street1 }} <br />
+                  {{ this.obj.city }} <br />
+
+                  {{ this.obj.country }} <br />
+                </p>
+              </div>
+              <div class="col-sm-6 text-right">
+                <span>Payment To</span>
+                <strong>
+                  {{ this.variable.userInfo.username }}
+                </strong>
+                <p>
+                  344 9th Avenue <br />
+                  San Francisco <br />
+                  99383 <br />
+                  USA <br />
+                  <a href="#">
+                    juanfer@gmail.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="line-items">
+            <div class="headers clearfix">
+              <div class="row">
+                <div class="col-xs-4">Description</div>
+                <div class="col-xs-3">Quantity</div>
+                <div class="col-xs-5 text-right">Amount</div>
+              </div>
+            </div>
+            <div class="items">
+              <div class="row item">
+                <div class="col-xs-4 desc">
+                  Html theme
+                </div>
+                <div class="col-xs-3 qty">
+                  3
+                </div>
+                <div class="col-xs-5 amount text-right">
+                  $60.00
+                </div>
+              </div>
+              <div class="row item">
+                <div class="col-xs-4 desc">
+                  Bootstrap snippet
+                </div>
+                <div class="col-xs-3 qty">
+                  1
+                </div>
+                <div class="col-xs-5 amount text-right">
+                  $20.00
+                </div>
+              </div>
+              <div class="row item">
+                <div class="col-xs-4 desc">
+                  Snippets on bootdey
+                </div>
+                <div class="col-xs-3 qty">
+                  2
+                </div>
+                <div class="col-xs-5 amount text-right">
+                  $18.00
+                </div>
+              </div>
+            </div>
+            <div class="total text-right">
+              <p class="extra-notes">
+                <strong>Extra Notes</strong>
+                Please send all items at the same time to shipping address by
+                next week. Thanks a lot.
+              </p>
+              <div class="field">Subtotal <span>$379.00</span></div>
+              <div class="field">Shipping <span>$0.00</span></div>
+              <div class="field">Discount <span>4.5%</span></div>
+              <div class="field grand-total">Total <span>$312.00</span></div>
+            </div>
+
+            <div class="print">
+              <a href="#">
+                <i class="fa fa-print"></i>
+                Print this receipt
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          Copyright © 2014. company name
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--                    =========================================================== form ===================================            -->
 <!--Main layout-->
-<main class="mt-3 pt-0">
+<main class="mt-3 pt-0" [hidden]="toggle">
   <div class="container wow fadeIn">
     <!-- Heading -->
     <h2 class="my-5 h2 text-center">Checkout form</h2>
@@ -404,8 +335,12 @@
               </div>
             </div>
             <hr class="mb-4" />
-            <button class="btn btn-primary btn-lg btn-block" type="submit">
-              Continue to checkout
+            <button
+              class="btn btn-primary btn-lg btn-block"
+              type="submit"
+              (click)="toggleRecipt()"
+            >
+              Continue to Receipt
             </button>
           </form>
         </div>
@@ -425,43 +360,27 @@
         <ul class="list-group mb-3 z-depth-1">
           <li
             class="list-group-item d-flex justify-content-between lh-condensed"
+            *ngFor="let item of this.variable.items"
           >
             <div>
-              <h6 class="my-0">Product name</h6>
-              <small class="text-muted">Brief description</small>
+              <h6 class="my-0">{{ item.title }}</h6>
             </div>
-            <span class="text-muted">$12</span>
+            <span class="text-muted">${{ item.price }}</span>
           </li>
-          <li
-            class="list-group-item d-flex justify-content-between lh-condensed"
-          >
-            <div>
-              <h6 class="my-0">Second product</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$8</span>
-          </li>
-          <li
-            class="list-group-item d-flex justify-content-between lh-condensed"
-          >
-            <div>
-              <h6 class="my-0">Third item</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between bg-light">
-            <div class="text-success">
-              <h6 class="my-0">Promo code</h6>
-              <small>EXAMPLECODE</small>
-            </div>
-            <span class="text-success">-$5</span>
-          </li>
+
           <li class="list-group-item d-flex justify-content-between">
             <span>Total (USD)</span>
-            <strong>$20</strong>
+            <strong>${{ this.variable.sum }}</strong>
           </li>
         </ul>
+
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success" [hidden]="promoToggle">
+            <h6 class="my-0">Promo code</h6>
+            <small>{{ this.inputText }}</small>
+          </div>
+          <span class="text-success" [hidden]="promoToggle">-$20</span>
+        </li>
         <!-- Cart -->
 
         <!-- Promo code -->
@@ -473,11 +392,13 @@
               placeholder="Promo code"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              #promo
             />
             <div class="input-group-append">
               <button
                 class="btn btn-secondary btn-md waves-effect m-0"
                 type="button"
+                (click)="promCodes(promo.value)"
               >
                 Redeem
               </button>

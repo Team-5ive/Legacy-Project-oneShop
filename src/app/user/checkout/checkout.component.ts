@@ -13,7 +13,7 @@ export class CheckoutComponent {
   username: string = localStorage.username;
   now = moment().format("LLLL");
   form: FormGroup;
-  selectedCountry: String = "safdsdf";
+  toggle: boolean = false;
   countries = [
     {
       country: "Tunisia",
@@ -39,8 +39,16 @@ export class CheckoutComponent {
       ]
     }
   ];
+  promoCodes: Array<any> = [
+    { key: "sofian", value: 20 },
+    { key: "hamza", value: 20 },
+    { key: "fareed", value: 20 },
+    { key: "malik", value: 20 }
+  ];
   cities: Array<any>;
   productsInfo = [];
+  promoToggle: boolean = true;
+  inputText: string = "";
   // cities =
   // formControlName
   constructor(
@@ -96,7 +104,7 @@ export class CheckoutComponent {
       userId: this.variable.userInfo["userId"],
       username: this.variable.userInfo["username"]
     };
-    // console.log(obj);
+    console.log(obj);
     return this.http
       .post("http://localhost:8080/api/add/orders", obj)
       .subscribe(response => {
@@ -108,5 +116,22 @@ export class CheckoutComponent {
     this.cities = this.countries.find(
       cntry => cntry.country === country
     ).cities;
+  }
+
+  toggleRecipt() {
+    this.toggle = !this.toggle;
+  }
+
+  promCodes(pCode: string) {
+    this.inputText = pCode;
+    console.log(this.inputText);
+    for (var i = 0; i < this.promoCodes.length; i++) {
+      if (this.promoCodes[i]["key"] === pCode) {
+        this.variable.sum = Math.abs(
+          this.variable.sum - this.promoCodes[i]["value"]
+        );
+        this.promoToggle = false;
+      }
+    }
   }
 }
