@@ -1,44 +1,3 @@
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
-<p>cart works!</p>
-
-
-<div>
-    <table class="table table-striped ">
-        <thead class="thead-dark">
-            <tr>
-                <td></td>
-                <td >Product</td>
-                <td >Tag</td>
-                <td >Color</td>
-                <td >Price</td>
-                <td >QTY</td>
-                <td >Size</td>
-                <td >Total</td>
-                <td >Delete</td>
-                </tr>
-        </thead>
-           <tbody>
-            <tr>
-                <th><img src="https://i.pinimg.com/originals/b0/20/d8/b020d854452ba13d2cf4ec225b7d3e21.jpg" alt="" class="img-thumbnail rounded float-left " ></th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th><button type="button" class="btn btn-danger" >X</button></th>
-    
-            </tr>
-            
-        </tbody>			
-    </table>
-    <button routerLink="/store/men" type="button" class="btn btn-primary float-right" >PROCEED TO CECHOUT </button>
-</div> -->
-
-
 <div class="card">
     <div class="card-body">
 
@@ -62,10 +21,7 @@
                             <strong>Price</strong>
                         </th>
                         <th class="font-weight-bold">
-                            <strong>QTY</strong>
-                        </th>
-                        <th class="font-weight-bold">
-                            <strong>Amount</strong>
+                            <strong>Size</strong>
                         </th>
                         <th></th>
                     </tr>
@@ -73,36 +29,30 @@
                 <!-- /.Table head -->
 
                 <!-- Table body -->
-                <tbody>
-
-                    <!-- <tr>
+                <tbody *ngFor="let item of toShow; let i =   index ">
+                    <!-- view data -->
+                    <tr>
                         <th scope="row">
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" alt=""
-                                class="img-fluid z-depth-0">
+                            <img src="{{item.image}}" alt="" class="img-fluid z-depth-0">
                         </th>
                         <td>
                             <h5 class="mt-3">
-                                <strong>iPhone</strong>
+                                <strong>{{item.title}} </strong>
                             </h5>
-                            <p class="text-muted">Apple</p>
+                            <p class="text-muted"></p>
                         </td>
-                        <td>White</td>
+                        <td>{{item.color}}</td>
                         <td></td>
-                        <td>$800</td>
-                        <td>
-                            <input type="number" value="2" aria-label="Search" class="form-control"
-                                style="width: 100px">
-                        </td>
+                        <td>{{item.price}}</td>
                         <td class="font-weight-bold">
-                            <strong>$800</strong>
+                            <strong>{{item.size}}</strong>
                         </td>
                         <td>
                             <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip"
-                                data-placement="top" title="Remove item">X
+                                data-placement="top" (click)="hide(i)" title="Remove item">X
                             </button>
                         </td>
-                    </tr> -->
-
+                    </tr>
                 </tbody>
             </table>
         </div>
