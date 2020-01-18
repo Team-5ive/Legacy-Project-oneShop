@@ -1,9 +1,5 @@
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-  crossorigin="anonymous"
-/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
 <div class="row">
   <div class="col h-100 ml-3">
@@ -13,44 +9,21 @@
     <div class="card  shadow w-auto h-100 mr-3 ">
       <div class="card-body ">
         <div class="" style="text-align: center;">
-          <span class="mb-2 "
-            ><strong>category : {{ product.category }}</strong></span
-          ><br />
-          <span class="mb-2 "
-            ><strong>title : {{ product.title }} </strong></span
-          ><br />
-          <span class="mb-2 "
-            ><strong>description : {{ product.description }} </strong></span
-          >
+          <span class="mb-2 "><strong>category : {{ product.category }}</strong></span><br />
+          <span class="mb-2 "><strong>title : {{ product.title }} </strong></span><br />
+          <span class="mb-2 "><strong>description : {{ product.description }} </strong></span>
         </div>
         <div class=" mt-3 bg-light text-dark">
-          <span class="mb-2 "
-            ><strong class="p-3"
-              >Brand : <span class="text-secondary">{{ product.brand }}</span>
-            </strong></span
-          ><br />
-          <span class="mb-2 "
-            ><strong class="p-3"
-              >Price :
-              <span class="text-secondary">{{ product.price }}$</span></strong
-            ></span
-          ><br />
-          <span class="mb-2 "
-            ><strong class="p-3"
-              >Sizes : <span class="text-secondary">[{{ product.size }}]</span>
-            </strong></span
-          ><br />
-          <span class="mb-2 "
-            ><strong class="p-3"
-              >Color : <span class="text-secondary">{{ product.color }}</span>
-            </strong></span
-          ><br />
-          <span class="mb-2 "
-            ><strong class="p-3"
-              >Rating :
-              <span class="text-secondary">{{ product.rating }}</span></strong
-            ></span
-          >
+          <span class="mb-2 "><strong class="p-3">Brand : <span class="text-secondary">{{ product.brand }}</span>
+            </strong></span><br />
+          <span class="mb-2 "><strong class="p-3">Price :
+              <span class="text-secondary">{{ product.price }}$</span></strong></span><br />
+          <span class="mb-2 "><strong class="p-3">Sizes : <span class="text-secondary">[{{ product.size }}]</span>
+            </strong></span><br />
+          <span class="mb-2 "><strong class="p-3">Color : <span class="text-secondary">{{ product.color }}</span>
+            </strong></span><br />
+          <span class="mb-2 "><strong class="p-3">Rating :
+              <span class="text-secondary">{{ product.rating }}</span></strong></span>
         </div>
         <div class="row">
           <div class="col">
@@ -68,7 +41,7 @@
 
         <div class="row ">
           <div class="col">
-            <button type="button" class="btn btn-primary float-right mt-3">
+            <button type="button" class="btn btn-primary float-right mt-3" (click)="addToCart()">
               Add To Cart
             </button>
           </div>

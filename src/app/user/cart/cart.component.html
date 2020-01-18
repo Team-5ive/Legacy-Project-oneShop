@@ -1,39 +1,76 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<div class="row">
-    <div class="col m-3 shadow">
-        <table class="table table-striped ">
-            <thead >
-                <tr>
-                    <td></td>
-                    <td >Product</td>
-                    <td >Tag</td>
-                    <td >Color</td>
-                    <td >Price</td>
-                    <td >QTY</td>
-                    <td >Size</td>
-                    <td >Total</td>
-                    <td >Delete</td>
+
+
+   
+
+
+<div class="card">
+    <div class="card-body">
+
+        <!-- Shopping Cart table -->
+        <div class="table-responsive">
+
+            <table class="table product-table">
+
+                <!-- Table head -->
+                <thead class="mdb-color lighten-5">
+                    <tr>
+                        <th></th>
+                        <th class="font-weight-bold">
+                            <strong>Product</strong>
+                        </th>
+                        <th class="font-weight-bold">
+                            <strong>Color</strong>
+                        </th>
+                        <th></th>
+                        <th class="font-weight-bold">
+                            <strong>Price</strong>
+                        </th>
+                        <th class="font-weight-bold">
+                            <strong>QTY</strong>
+                        </th>
+                        <th class="font-weight-bold">
+                            <strong>Amount</strong>
+                        </th>
+                        <th></th>
                     </tr>
-            </thead>
-               <tbody>
-                <tr>
-                    <th><img src={{men[2].image}} alt="" class="img-thumbnail rounded float-left " style="width: 200px;height: 200px;" ></th>
-                    <th>1</th>
-                    <th>{{men[2].tag}}</th>
-                    <th>{{men[2].color}}</th>
-                    <th>{{men[2].price}}</th>
-                    <th>00000</th>
-                    <th>{{men[2].size}}</th>
-                    <th>00000</th>
-                    <th><button type="button" class="btn btn-danger  btn-sm"  >X</button></th>
-        
-                </tr>
-                
-            </tbody>			
-        </table>
-        <button routerLink="/store/men" type="button" class="btn btn-primary float-right" >PROCEED TO CECHOUT </button>
+                </thead>
+                <!-- /.Table head -->
+
+                <!-- Table body -->
+                <tbody>
+
+                    <!-- <tr>
+                        <th scope="row">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" alt=""
+                                class="img-fluid z-depth-0">
+                        </th>
+                        <td>
+                            <h5 class="mt-3">
+                                <strong>iPhone</strong>
+                            </h5>
+                            <p class="text-muted">Apple</p>
+                        </td>
+                        <td>White</td>
+                        <td></td>
+                        <td>$800</td>
+                        <td>
+                            <input type="number" value="2" aria-label="Search" class="form-control"
+                                style="width: 100px">
+                        </td>
+                        <td class="font-weight-bold">
+                            <strong>$800</strong>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip"
+                                data-placement="top" title="Remove item">X
+                            </button>
+                        </td>
+                    </tr> -->
+
+                </tbody>
+            </table>
+        </div>
     </div>
-
 </div>
-

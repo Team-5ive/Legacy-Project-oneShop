@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
       .post("http://localhost:8080/api/user/login", obj)
       .subscribe(response => {
         if (response) {
-          console.log(response)
+
           Swal.fire({
             position: 'top',
             icon: 'success',
@@ -51,7 +51,14 @@ export class LoginComponent implements OnInit {
             timer: 1500
           })
           localStorage.setItem("token", ` ${response["token"]}`);
-          this.router.navigate([""]);
+          console.log(response)
+          if (response["userType"] != "Customer") {
+            this.router.navigate(["dashboard"]);
+            this.setToken()
+          } else {
+            this.router.navigate([""]);
+          }
+
         } else {
           Swal.fire({
             position: 'top',
@@ -60,7 +67,7 @@ export class LoginComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
-          
+
           this.router.navigate(["login"]);
 
 

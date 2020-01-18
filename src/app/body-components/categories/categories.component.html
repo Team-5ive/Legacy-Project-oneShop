@@ -3,6 +3,7 @@ To refactore this
 -->
 <div *ngIf="this.href === '/store/men'; then men; else women" class="all"></div>
 <ng-template #men>
+
   <div class="m-3 ">
     <h1>All {{ categories.men.gender }} Products </h1>
     <div class="card-deck row"  >
@@ -20,11 +21,13 @@ To refactore this
                   </div>
             </a>   
          </mdb-card>
+
       </div>
   </div>
 </ng-template>
 
 <ng-template #women>
+
   <div class="m-3 ">
     <h1>All {{ categories.women.gender }} Products </h1>
     <div class="card-deck row"  >
@@ -45,3 +48,4 @@ To refactore this
       </div>
   </div> 
 </ng-template>
+
