@@ -29,7 +29,7 @@ To refactore this
     <h1>All {{ categories.women.gender }} Products </h1>
     <div class="card-deck row"  >
         <mdb-card class="col" *ngFor="let item of categories.women.tags"  >
-            <a href="#" routerLink="/store/women/{{ item.tagName.toLowerCase() }}">
+            <a href="#" routerLink="/store/men/{{ item.tagName.toLowerCase() }}">
                 <div class=" row view overlay waves-light  pl-1 pt-1 "   >
                     <img  src="{{item.tagImage}}" alt="Card image cap" style=" width: 200px;height:300px;">
                   </div>
