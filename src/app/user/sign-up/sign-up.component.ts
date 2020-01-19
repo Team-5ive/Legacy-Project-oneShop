@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import Swal from "sweetalert2";
 import { Router } from "@angular/router";
 import { HttpService } from "./../../http.service";
+import { VariablesService } from "./../../variables.service";
 
 @Component({
   selector: "app-sign-up",
@@ -18,7 +19,8 @@ export class SignUpComponent implements OnInit {
     public user: FormBuilder,
     private http: HttpClient,
     public _http: HttpService,
-    private router: Router
+    private router: Router,
+    private variable: VariablesService
   ) {
     this.form = this.user.group({
       name: [""],
@@ -28,7 +30,7 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   submitForm() {
     var obj = {
@@ -50,7 +52,13 @@ export class SignUpComponent implements OnInit {
             timer: 1500
           });
           localStorage.setItem("token", ` ${response["token"]}`);
-          localStorage.setItem("username", ` ${response["username"]}`)
+          localStorage.setItem("type", ` ${response["userType"]}`);
+          this.variable.userInfo = {
+            userId: response["userId"],
+            username: response["username"],
+            userType: response["userType"],
+            token: response["token"]
+          };
           this.setToken();
           this.router.navigate([""]);
         } else {

@@ -1,4 +1,11 @@
-<mdb-card
+<!-- <mdb-card
+  [ngStyle]="
+    item.status === 'pending'
+      ? '#ffbb33'
+      : item.status === 'Done'
+      ? '#00C851'
+      : '#CC0000'
+  "
   style="width: 20rem"
   *ngFor="let item of order"
   [hidden]="show"
@@ -29,7 +36,63 @@
     </li>
   </ul>
   <mdb-card-body>
-    <button mdbBtn type="button" color="success" mdbWavesEffect>Confirm</button>
-    <button mdbBtn type="button" color="danger" mdbWavesEffect>Cancel</button>
+    <button
+      mdbBtn
+      type="button"
+      (click)="confirm(item._id)"
+      color="success"
+      mdbWavesEffect
+    >
+      Confirm
+    </button>
+    <button
+      mdbBtn
+      type="button"
+      (click)="cancel(item._id)"
+      color="danger"
+      mdbWavesEffect
+    >
+      Cancel
+    </button>
   </mdb-card-body>
-</mdb-card>
+</mdb-card> -->
+
+<div
+  [ngClass]="
+    item.status === 'Pending'
+      ? 'card text-white bg-warning mb-3 container'
+      : item.status === 'Done'
+      ? 'card text-white bg-success mb-3 container'
+      : 'card text-white bg-danger mb-3 container'
+  "
+  style="max-width: 18rem;"
+  *ngFor="let item of order"
+>
+  <div class="card-header">{{ item.status }}</div>
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ item.delivery_info.city }}, {{ item.delivery_info.country }}
+    </h5>
+    <p class="card-text">Method : {{ item.payment_method }}</p>
+    <p class="card-text">Items : {{ item.products.length }}</p>
+    <p class="card-text">Price : {{ item.total_order_price }} $</p>
+  </div>
+  <button
+    mdbBtn
+    type="button"
+    (click)="confirm(item._id)"
+    color="success"
+    mdbWavesEffect
+  >
+    Confirm
+  </button>
+  <button
+    mdbBtn
+    type="button"
+    (click)="cancel(item._id)"
+    color="danger"
+    mdbWavesEffect
+  >
+    Cancel
+  </button>
+</div>

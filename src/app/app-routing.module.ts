@@ -16,6 +16,7 @@ import { SignUpComponent } from "./user/sign-up/sign-up.component";
 import { UpdatFormComponent } from "./dashboard/allproducts/updat-form/updat-form.component";
 import { CheckoutComponent } from "./user/checkout/checkout.component";
 import { ReciptComponent } from "./user/recipt/recipt.component";
+import { StatisticsComponent } from "./dashboard/statistics/statistics.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: "women", component: WomenComponent },
       { path: "orders", component: OrdersComponent },
       { path: "updateproduct", component: UpdatFormComponent },
+      { path: "statistics", component: StatisticsComponent },
       { path: "", component: AddProductComponent }
     ]
   },

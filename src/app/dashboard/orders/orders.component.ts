@@ -31,8 +31,30 @@ export class OrdersComponent implements OnInit {
         return response["name"];
       });
   }
-
   toggle() {
     !this.show;
+  }
+
+  confirm(id: string) {
+    this.http
+      .put(`http://localhost:8080/api/order/${id}`, { status: "Done" })
+      .subscribe(data => {
+        if (data["success"]) {
+          console.log("done");
+          this.ngOnInit();
+        }
+      });
+  }
+  cancel(id: string) {
+    this.http
+      .put(`http://localhost:8080/api/order/${id}`, {
+        status: "Cancel"
+      })
+      .subscribe(data => {
+        if (data["success"]) {
+          console.log("done");
+          this.ngOnInit();
+        }
+      });
   }
 }

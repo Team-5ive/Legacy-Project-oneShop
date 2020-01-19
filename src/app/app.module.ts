@@ -28,6 +28,7 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { UpdatFormComponent } from "./dashboard/allproducts/updat-form/updat-form.component";
 import { FilterPipe } from './filter.pipe';
 import { ReciptComponent } from './user/recipt/recipt.component';
+import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ReciptComponent } from './user/recipt/recipt.component';
     AddProductComponent,
     UpdatFormComponent,
     FilterPipe,
-    ReciptComponent
+    ReciptComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,

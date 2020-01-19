@@ -52,14 +52,16 @@ export class LoginComponent implements OnInit {
           });
           localStorage.setItem("token", ` ${response["token"]}`);
           localStorage.setItem("type", ` ${response["userType"]}`);
-          console.log(response);
 
           if (response["userType"] !== "Customer") {
             this.router.navigate(["dashboard"]);
             this.variable.userInfo = {
               userId: response["userId"],
-              username: response["username"]
+              username: response["username"],
+              userType: response["userType"],
+              token: response["token"]
             };
+            console.log(this.variable.userInfo);
             this.setToken();
           } else {
             this.router.navigate([""]);
