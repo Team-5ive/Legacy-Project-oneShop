@@ -12,6 +12,7 @@ export class StatisticsComponent implements OnInit {
   orders;
   allProducts;
   obj: object = {};
+  arrayOfTheMostSold = [];
 
   constructor(private http: HttpClient) {}
 
@@ -86,7 +87,13 @@ export class StatisticsComponent implements OnInit {
         // }
       }
     }
-    console.log(this.obj);
+    for (var key in this.obj) {
+      this.arrayOfTheMostSold.push({ name: key, count: this.obj[key] });
+    }
+    this.arrayOfTheMostSold = this.arrayOfTheMostSold.sort(
+      (a, b) => b.count - a.count
+    );
+    console.log(this.arrayOfTheMostSold);
     // this.obj = this.obj.sort((a,b) => )
   }
 }
