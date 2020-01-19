@@ -1,4 +1,4 @@
-<div class="receipt-content">
+<div class="receipt-content" #content>
   <div class="container bootstrap snippet">
     <div class="row">
       <div class="col-md-12">
@@ -86,10 +86,10 @@
               </div>
 
               <div class="print">
-                <a href="#">
+                <button (click)="downloadPDF()">
                   <i class="fa fa-print"></i>
                   Print this receipt
-                </a>
+                </button>
               </div>
             </div>
           </div>
