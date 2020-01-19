@@ -28,9 +28,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <span>Client</span>
-                <strong>
-                  {{ this.obj.delivery_info.street1 }}
-                </strong>
+                <strong> Name: {{ this.variable.userInfo.username }} </strong>
                 <p>
                   {{ this.obj.delivery_info.street1 }} <br />
                   {{ this.obj.delivery_info.city }} <br />
@@ -41,12 +39,12 @@
               <div class="col-sm-6 text-right">
                 <span>Payment To</span>
                 <strong>
-                  {{ this.variable.userInfo.username }}
+                  Undefined E-commerce Shop
                 </strong>
                 <p>
-                  {{ this.obj.delivery_info.street2 }} <br />
-                  {{ this.obj.delivery_info.city }} <br />
-                  {{ this.obj.delivery_info.country }} <br />
+                  El ghazala <br />
+                  tunis <br />
+                  Tunis <br />
                 </p>
               </div>
             </div>
@@ -55,15 +53,15 @@
           <div class="line-items">
             <div class="headers clearfix">
               <div class="row">
-                <div class="col-xs-3">{{ this.variable.items.lenght }}</div>
+                <div class="col-xs-3">{{ this.variable.items.length }}</div>
                 <div class="col-xs-5 text-right">{{ this.variable.sum }}</div>
               </div>
             </div>
             <div class="items">
               <div class="row item" *ngFor="let item of this.variable.items">
-                <div class="col-xs-4 desc">Name {{ item.title }}</div>
+                <div class="col-xs-4 desc">Item: {{ item.title }}</div>
                 <div class="col-xs-3 qty">
-                  1
+                  Quantity: 1
                 </div>
                 <br />
                 <div class="col-xs-5 amount text-right">
